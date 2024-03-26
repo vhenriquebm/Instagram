@@ -17,6 +17,7 @@
 		420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B02BB317C0007E5D5B /* NotificationsViewController.swift */; };
 		420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B32BB31804007E5D5B /* ProfileViewController.swift */; };
 		420609B72BB319B5007E5D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420609B62BB319B5007E5D5B /* Assets.xcassets */; };
+		42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		420609B02BB317C0007E5D5B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		420609B32BB31804007E5D5B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		420609B62BB319B5007E5D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				420609AD2BB31765007E5D5B /* FeedViewController.swift */,
+				42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,
 				420609AC2BB31753007E5D5B /* ImageSelectorViewController.swift in Sources */,
+				42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */,
 				420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */,
 				420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */,
 				420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */,

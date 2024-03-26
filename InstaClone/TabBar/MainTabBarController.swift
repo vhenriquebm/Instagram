@@ -16,38 +16,37 @@ class MainTabBarController: UITabBarController {
         self.tabBar.tintColor = .black
     }
     
-    
     private func setControllers() {
         
-        let feed = createController(unselectedImage: "home_unselected",
-                                    selectedImage: "home_selected",
-                                    rootViewController: FeedViewController())
+        let layout = UICollectionViewFlowLayout()
+        let feed = createController(unselectedImage: .homeUnselected,
+                                    selectedImage: .homeSelected,
+                                    rootViewController: FeedViewController(collectionViewLayout: layout))
         
-        let search = createController(unselectedImage: "search_selected",
-                                      selectedImage: "search_unselected",
+        let search = createController(unselectedImage: .searchSelected,
+                                      selectedImage: .searchUnselected,
                                       rootViewController: SearchViewController())
         
-        let imageSelector = createController(unselectedImage: "plus_unselected",
-                                             selectedImage: "plus_photo",
+        let imageSelector = createController(unselectedImage: .plusUnselected,
+                                             selectedImage: .plusPhoto,
                                              rootViewController: ImageSelectorViewController())
         
-        let notification = createController(unselectedImage: "like_unselected",
-                                            selectedImage: "like_selected",
+        let notification = createController(unselectedImage: .likeUnselected,
+                                            selectedImage: .likeSelected,
                                             rootViewController: NotificationViewController())
         
-        let profile = createController(unselectedImage: "profile_unselected",
-                                       selectedImage: "profile_selected",
+        let profile = createController(unselectedImage: .profileUnselected,
+                                       selectedImage: .profileSelected,
                                        rootViewController: ProfileViewController())
         
         viewControllers = [feed, search, imageSelector, notification, profile]
         
     }
     
-    
-    private func createController(unselectedImage: String, selectedImage: String, rootViewController: UIViewController) -> UINavigationController {
+    private func createController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: rootViewController)
-        navigation.tabBarItem.image = UIImage(named: unselectedImage)
-        navigation.tabBarItem.selectedImage = UIImage(named: selectedImage)
+        navigation.tabBarItem.image = unselectedImage
+        navigation.tabBarItem.selectedImage = selectedImage
         navigation.navigationBar.tintColor = .black
         return navigation
     }
