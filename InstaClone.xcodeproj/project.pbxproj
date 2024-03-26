@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		420609912BB30D2C007E5D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609902BB30D2C007E5D5B /* AppDelegate.swift */; };
 		420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609922BB30D2C007E5D5B /* SceneDelegate.swift */; };
-		420609952BB30D2C007E5D5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609942BB30D2C007E5D5B /* ViewController.swift */; };
-		4206099A2BB30D2D007E5D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420609992BB30D2D007E5D5B /* Assets.xcassets */; };
 		4206099D2BB30D2D007E5D5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4206099B2BB30D2D007E5D5B /* LaunchScreen.storyboard */; };
 		420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609A42BB30D4B007E5D5B /* MainTabBarController.swift */; };
+		420609AA2BB31731007E5D5B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609A92BB31731007E5D5B /* SearchViewController.swift */; };
+		420609AC2BB31753007E5D5B /* ImageSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609AB2BB31752007E5D5B /* ImageSelectorViewController.swift */; };
+		420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609AD2BB31765007E5D5B /* FeedViewController.swift */; };
+		420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B02BB317C0007E5D5B /* NotificationsViewController.swift */; };
+		420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B32BB31804007E5D5B /* ProfileViewController.swift */; };
+		420609B72BB319B5007E5D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420609B62BB319B5007E5D5B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4206098D2BB30D2C007E5D5B /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		420609902BB30D2C007E5D5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		420609922BB30D2C007E5D5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		420609942BB30D2C007E5D5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		420609992BB30D2D007E5D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4206099C2BB30D2D007E5D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4206099E2BB30D2D007E5D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		420609A42BB30D4B007E5D5B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		420609A92BB31731007E5D5B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		420609AB2BB31752007E5D5B /* ImageSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorViewController.swift; sourceTree = "<group>"; };
+		420609AD2BB31765007E5D5B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		420609B02BB317C0007E5D5B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		420609B32BB31804007E5D5B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		420609B62BB319B5007E5D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		4206098F2BB30D2C007E5D5B /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
+				420609B52BB3186D007E5D5B /* TabBar */,
+				420609B22BB317F9007E5D5B /* Profile */,
+				420609AF2BB317B0007E5D5B /* Notifications */,
+				420609A82BB3171C007E5D5B /* Search */,
+				420609A72BB3170E007E5D5B /* ImageSelector */,
+				420609A62BB31708007E5D5B /* Feed */,
 				420609902BB30D2C007E5D5B /* AppDelegate.swift */,
 				420609922BB30D2C007E5D5B /* SceneDelegate.swift */,
-				420609942BB30D2C007E5D5B /* ViewController.swift */,
-				420609992BB30D2D007E5D5B /* Assets.xcassets */,
 				4206099B2BB30D2D007E5D5B /* LaunchScreen.storyboard */,
 				4206099E2BB30D2D007E5D5B /* Info.plist */,
-				420609A42BB30D4B007E5D5B /* MainTabBarController.swift */,
+				420609B62BB319B5007E5D5B /* Assets.xcassets */,
 			);
 			path = InstaClone;
+			sourceTree = "<group>";
+		};
+		420609A62BB31708007E5D5B /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				420609AD2BB31765007E5D5B /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		420609A72BB3170E007E5D5B /* ImageSelector */ = {
+			isa = PBXGroup;
+			children = (
+				420609AB2BB31752007E5D5B /* ImageSelectorViewController.swift */,
+			);
+			path = ImageSelector;
+			sourceTree = "<group>";
+		};
+		420609A82BB3171C007E5D5B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				420609A92BB31731007E5D5B /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		420609AF2BB317B0007E5D5B /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				420609B02BB317C0007E5D5B /* NotificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		420609B22BB317F9007E5D5B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				420609B32BB31804007E5D5B /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		420609B52BB3186D007E5D5B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				420609A42BB30D4B007E5D5B /* MainTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4206099D2BB30D2D007E5D5B /* LaunchScreen.storyboard in Resources */,
-				4206099A2BB30D2D007E5D5B /* Assets.xcassets in Resources */,
+				420609B72BB319B5007E5D5B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,10 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				420609952BB30D2C007E5D5B /* ViewController.swift in Sources */,
+				420609AA2BB31731007E5D5B /* SearchViewController.swift in Sources */,
 				420609912BB30D2C007E5D5B /* AppDelegate.swift in Sources */,
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,
+				420609AC2BB31753007E5D5B /* ImageSelectorViewController.swift in Sources */,
+				420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */,
+				420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */,
+				420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
