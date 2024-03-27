@@ -48,7 +48,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     func start(with scene: UIWindowScene) {
-        let controller = MainTabBarController()
+//        let controller = MainTabBarController()
+        let controller = UINavigationController(rootViewController: LoginViewController())
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
         window?.rootViewController = controller
