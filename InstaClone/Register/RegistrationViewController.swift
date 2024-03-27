@@ -7,13 +7,16 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegistrationViewController: UIViewController {
     
-    private lazy var addPhotoImageView: UIButton = {
+    var delegate: RegistrationViewModelProtocol?
+    
+    private lazy var addPhotoButton: UIButton = {
         let button = UIButton()
         button.setImage(.plusPhoto.withRenderingMode(.alwaysTemplate), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = UIColor.white
+        button.addTarget(self, action: #selector(selectPhoto), for: .touchUpInside)
         return button
     }()
     
@@ -36,8 +39,9 @@ class RegisterViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
-        button.backgroundColor = .systemPurple
+        button.backgroundColor = .systemPurple.withAlphaComponent(0.5)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.isEnabled = false
         return button
     }()
     
@@ -53,25 +57,27 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        configureObservers()
     }
     
     private func configureView() {
         view.configureGradientBackground()
-        view.addSubview(addPhotoImageView)
+        view.addSubview(addPhotoButton)
         view.addSubview(fieldsStackView)
         view.addSubview(alreadyHaveAnAccountButton)
         configureConstraints()
+        self.delegate = RegistrationViewModel()
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
-            addPhotoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            addPhotoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            addPhotoImageView.heightAnchor.constraint(equalToConstant: 150),
-            addPhotoImageView.widthAnchor.constraint(equalToConstant: 150),
+            addPhotoButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            addPhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addPhotoButton.heightAnchor.constraint(equalToConstant: 150),
+            addPhotoButton.widthAnchor.constraint(equalToConstant: 150),
             
-            fieldsStackView.topAnchor.constraint(equalTo: addPhotoImageView.bottomAnchor, constant: 20),
+            fieldsStackView.topAnchor.constraint(equalTo: addPhotoButton.bottomAnchor, constant: 20),
             
             fieldsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
@@ -87,5 +93,56 @@ class RegisterViewController: UIViewController {
     
     @objc private func popViewController() {
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    @objc private func textDidChange(sender: UITextField) {
+        
+        if sender == emailTextField {
+            delegate?.email = sender.text
+        } else if sender == passwordTextField {
+            delegate?.password = sender.text
+        } else if sender == fullNameTextField {
+            delegate?.fullName = sender.text
+        }  else if sender == userNameTextField {
+            delegate?.userName = sender.text
+        }
+        
+    
+        if delegate?.isValid ?? false {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = UIColor.systemPurple
+        }
+    }
+    
+    @objc private func selectPhoto() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
+    
+    private func configureObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        userNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+}
+
+
+extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[.editedImage] as? UIImage else { return }
+        picker.dismiss(animated: false)
+        
+        addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
+        addPhotoButton.layer.masksToBounds = true
+        addPhotoButton.layer.borderWidth = 2
+        addPhotoButton.layer.borderColor = UIColor.black.cgColor
+        addPhotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+        
     }
 }

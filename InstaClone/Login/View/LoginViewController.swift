@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var delegate: LoginViewModelProtocol?
+    
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .instagramLogoWhite
@@ -41,7 +43,8 @@ class LoginViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
-        button.backgroundColor = .systemPurple
+        button.backgroundColor = UIColor.systemPurple.withAlphaComponent(0.5)
+        button.isEnabled = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         return button
     }()
@@ -71,6 +74,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        self.delegate = LoginViewModel()
+        configureObservers()
     }
     
     private func configureView() {
@@ -113,8 +118,22 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func goToRegister() {
-        let controller = RegisterViewController()
+        let controller = RegistrationViewController()
         self.navigationController?.pushViewController(controller, animated: false)
+    }
+    
+    @objc private func textDidChange(sender: UITextField) {
+        
+        if sender == emailTextField {
+            delegate?.email = sender.text
+        } else if sender == passwordTextField {
+            delegate?.password = sender.text
+        }
+        
+        if delegate?.isValid ?? false {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = UIColor.systemPurple
+        }
     }
     
     
@@ -124,6 +143,11 @@ class LoginViewController: UIViewController {
         gradient.locations = [0,1]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
+    }
+    
+    private func configureObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
 
