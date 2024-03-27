@@ -12,6 +12,7 @@ class CustomTextField: UITextField {
     init(placeholder: String, type: UIKeyboardType = .default, isSecureEntry: Bool = false) {
         super.init(frame: .zero)
         configureView(placeholder: placeholder, type: type, isSecureEntry: isSecureEntry)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -32,5 +33,6 @@ class CustomTextField: UITextField {
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.7)])
         isSecureTextEntry = isSecureEntry
         translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }

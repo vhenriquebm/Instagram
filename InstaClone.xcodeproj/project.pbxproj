@@ -17,6 +17,7 @@
 		420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B02BB317C0007E5D5B /* NotificationsViewController.swift */; };
 		420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B32BB31804007E5D5B /* ProfileViewController.swift */; };
 		420609B72BB319B5007E5D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420609B62BB319B5007E5D5B /* Assets.xcassets */; };
+		4283FFA42BB440E900711D0C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283FFA32BB440E900711D0C /* UIView+.swift */; };
 		4294357D2BB38C2B00AB5121 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294357C2BB38C2B00AB5121 /* LoginViewController.swift */; };
 		4294357F2BB38C4200AB5121 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294357E2BB38C4200AB5121 /* RegisterViewController.swift */; };
 		429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429435802BB3A17600AB5121 /* CustomTextField.swift */; };
@@ -37,6 +38,7 @@
 		420609B02BB317C0007E5D5B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		420609B32BB31804007E5D5B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		420609B62BB319B5007E5D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		4283FFA32BB440E900711D0C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		4294357C2BB38C2B00AB5121 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4294357E2BB38C4200AB5121 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		429435802BB3A17600AB5121 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				429435842BB3A64000AB5121 /* UIButton+.swift */,
+				4283FFA32BB440E900711D0C /* UIView+.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				420609AA2BB31731007E5D5B /* SearchViewController.swift in Sources */,
 				4294357F2BB38C4200AB5121 /* RegisterViewController.swift in Sources */,
+				4283FFA42BB440E900711D0C /* UIView+.swift in Sources */,
 				420609912BB30D2C007E5D5B /* AppDelegate.swift in Sources */,
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,

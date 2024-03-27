@@ -63,6 +63,7 @@ class LoginViewController: UIViewController {
         button.attributedTitle(firstText: "Don't have an account?",
                                secondText: "Sign up")
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(goToRegister), for: .touchUpInside)
         return button
     }()
     
@@ -76,7 +77,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
         
-        configureGradientBackground()
+        view.configureGradientBackground()
         
         view.addSubview(logoImageView)
         view.addSubview(credentialsStackView)
@@ -111,7 +112,13 @@ class LoginViewController: UIViewController {
         ])
     }
     
-    private func configureGradientBackground() {
+    @objc private func goToRegister() {
+        let controller = RegisterViewController()
+        self.navigationController?.pushViewController(controller, animated: false)
+    }
+    
+    
+    private func configureGradientBackground(view: UIView) {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
         gradient.locations = [0,1]
