@@ -16,4 +16,22 @@ struct RegistrationViewModel: RegistrationViewModelProtocol {
     var isValid: Bool {
         return email?.isEmpty == false && password?.isEmpty == false && fullName?.isEmpty == false && userName?.isEmpty == false
     }
+    
+    func register(with user: UserRegistration, completion: @escaping registrationCompletion) {
+        
+        RegistrationService.register(with: user, completion: completion)
+        
+//        
+//        RegistrationService.register(with: user) { error in
+//            if let error = error {
+//                print ("DEBUG: Error to register user \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            print ("DEBUG: Successfullu Registered user ViewModel")
+//
+//            
+//
+//        }
+    }
 }

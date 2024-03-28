@@ -49,6 +49,15 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    lazy var loadingView: UIActivityIndicatorView = {
+       let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.style = .medium
+        view.color = UIColor.white
+        return view
+    }()
+    
     private lazy var forgetPasswordButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.white, for: .normal)
@@ -87,6 +96,7 @@ class LoginViewController: UIViewController {
         view.addSubview(logoImageView)
         view.addSubview(credentialsStackView)
         view.addSubview(dontHaveAccountButton)
+        view.addSubview(loadingView)
         
         configureConstraints()
     }
@@ -112,8 +122,12 @@ class LoginViewController: UIViewController {
             dontHaveAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             dontHaveAccountButton.heightAnchor.constraint(equalToConstant: 50),
             
-            forgetPasswordButton.heightAnchor.constraint(equalToConstant: 50)
+            forgetPasswordButton.heightAnchor.constraint(equalToConstant: 50),
             
+            loadingView.heightAnchor.constraint(equalToConstant: 50),
+            loadingView.widthAnchor.constraint(equalToConstant: 50),
+            loadingView.centerXAnchor.constraint(equalTo: loginButton.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: loginButton.centerYAnchor),
         ])
     }
     
@@ -148,6 +162,41 @@ class LoginViewController: UIViewController {
     private func configureObservers() {
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        loginButton.addTarget(self, action:  #selector(login), for: .touchUpInside)
+        
+    }
+    
+    @objc private func login() {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text else { return }
+        
+        loginButton.setTitle("", for: .normal)
+        loadingView.startAnimating()
+        
+        delegate?.login(with: email, and: password, completion: { result, error in
+            
+            self.loginButton.setTitle("Log in", for: .normal)
+            self.loadingView.stopAnimating()
+            
+            guard error == nil  else { return }
+            
+            self.goToFeedViewController()
+            
+        })
+    }
+    
+    private func goToFeedViewController() {
+        let controller = MainTabBarController()
+        let navigation = UINavigationController(rootViewController: controller)
+        navigation.modalPresentationStyle = .fullScreen
+        
+        self.dismiss(animated: true) {
+                self.present(navigation, animated: true)
+            }
+    }
+    
+    deinit {
+        print ("The login controller is not in the memory anymore")
     }
 }
 

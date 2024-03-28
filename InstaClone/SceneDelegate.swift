@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -13,7 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        FirebaseApp.configure()
+        
         guard let scene = (scene as? UIWindowScene) else { return }
+        
         start(with: scene)
     }
     
@@ -48,11 +52,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     func start(with scene: UIWindowScene) {
-//        let controller = MainTabBarController()
-        let controller = UINavigationController(rootViewController: LoginViewController())
+        let controller = UINavigationController(rootViewController: MainTabBarController())
         window = UIWindow(windowScene: scene)
-        window?.makeKeyAndVisible()
         window?.rootViewController = controller
+        window?.makeKeyAndVisible()
     }
 }
 

@@ -21,15 +21,25 @@
 		424D0BF82BB4551400E4EA0E /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BF72BB4551400E4EA0E /* LoginViewModelProtocol.swift */; };
 		424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */; };
 		424D0BFF2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BFE2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift */; };
+		424D0C012BB4764000E4EA0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */; };
 		4283FFA42BB440E900711D0C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283FFA32BB440E900711D0C /* UIView+.swift */; };
 		4294357D2BB38C2B00AB5121 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294357C2BB38C2B00AB5121 /* LoginViewController.swift */; };
 		4294357F2BB38C4200AB5121 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294357E2BB38C4200AB5121 /* RegistrationViewController.swift */; };
 		429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429435802BB3A17600AB5121 /* CustomTextField.swift */; };
 		429435852BB3A64000AB5121 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429435842BB3A64000AB5121 /* UIButton+.swift */; };
+		42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A622BB499210074F8DB /* RegistrationView.swift */; };
+		42A31A662BB4A9400074F8DB /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A652BB4A9400074F8DB /* ImageUploader.swift */; };
+		42A31A6B2BB4ABB80074F8DB /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A6A2BB4ABB80074F8DB /* UserRegistration.swift */; };
+		42A31A6D2BB4AD800074F8DB /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A6C2BB4AD800074F8DB /* RegistrationService.swift */; };
+		42A31A6F2BB5CB040074F8DB /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A6E2BB5CB040074F8DB /* FeedViewModel.swift */; };
+		42A31A742BB5CB390074F8DB /* FeedViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A732BB5CB390074F8DB /* FeedViewModelProtocol.swift */; };
+		42A31A772BB5D1B00074F8DB /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A762BB5D1B00074F8DB /* LoginService.swift */; };
 		42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */; };
+		50899A781B47D6F45C3363B4 /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899C19B363C57D9DE00C2AA0 /* Pods_InstaClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CB2FA9483E02C6CB9FF4B46 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		4206098D2BB30D2C007E5D5B /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		420609902BB30D2C007E5D5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		420609922BB30D2C007E5D5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,12 +56,22 @@
 		424D0BF72BB4551400E4EA0E /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		424D0BFE2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelProtocol.swift; sourceTree = "<group>"; };
+		424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4283FFA32BB440E900711D0C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		4294357C2BB38C2B00AB5121 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4294357E2BB38C4200AB5121 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		429435802BB3A17600AB5121 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		429435842BB3A64000AB5121 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		42A31A622BB499210074F8DB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		42A31A652BB4A9400074F8DB /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		42A31A6A2BB4ABB80074F8DB /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
+		42A31A6C2BB4AD800074F8DB /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		42A31A6E2BB5CB040074F8DB /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		42A31A732BB5CB390074F8DB /* FeedViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModelProtocol.swift; sourceTree = "<group>"; };
+		42A31A762BB5D1B00074F8DB /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		899C19B363C57D9DE00C2AA0 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		939E96A5B38F6A99B87BC571 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50899A781B47D6F45C3363B4 /* Pods_InstaClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +91,8 @@
 			children = (
 				4206098F2BB30D2C007E5D5B /* InstaClone */,
 				4206098E2BB30D2C007E5D5B /* Products */,
+				BCE5C3266FC9E902EEF26DA5 /* Pods */,
+				A9BD07BBC51B60DB942CFB22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +122,8 @@
 				4206099B2BB30D2D007E5D5B /* LaunchScreen.storyboard */,
 				4206099E2BB30D2D007E5D5B /* Info.plist */,
 				420609B62BB319B5007E5D5B /* Assets.xcassets */,
+				424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */,
+				42A31A652BB4A9400074F8DB /* ImageUploader.swift */,
 			);
 			path = InstaClone;
 			sourceTree = "<group>";
@@ -106,8 +131,9 @@
 		420609A62BB31708007E5D5B /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				420609AD2BB31765007E5D5B /* FeedViewController.swift */,
-				42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */,
+				42A31A722BB5CB2A0074F8DB /* Protocols */,
+				42A31A712BB5CB160074F8DB /* View */,
+				42A31A702BB5CB0F0074F8DB /* ViewModel */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -179,6 +205,8 @@
 		424D0BF92BB45A1900E4EA0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4294357E2BB38C4200AB5121 /* RegistrationViewController.swift */,
+				42A31A622BB499210074F8DB /* RegistrationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +230,7 @@
 		4294357A2BB38C1400AB5121 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				42A31A782BB5D3C00074F8DB /* Service */,
 				424D0BF62BB4550600E4EA0E /* Protocols */,
 				424D0BF32BB4547F00E4EA0E /* ViewModel */,
 				424D0BF22BB4547900E4EA0E /* View */,
@@ -212,10 +241,11 @@
 		4294357B2BB38C1C00AB5121 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				42A31A672BB4AB910074F8DB /* Model */,
+				42A31A642BB4A8F60074F8DB /* Service */,
 				424D0BFD2BB45A7F00E4EA0E /* Protocols */,
 				424D0BFA2BB45A1D00E4EA0E /* ViewModel */,
 				424D0BF92BB45A1900E4EA0E /* View */,
-				4294357E2BB38C4200AB5121 /* RegistrationViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -237,6 +267,72 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		42A31A642BB4A8F60074F8DB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				42A31A6C2BB4AD800074F8DB /* RegistrationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		42A31A672BB4AB910074F8DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42A31A6A2BB4ABB80074F8DB /* UserRegistration.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A31A702BB5CB0F0074F8DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42A31A6E2BB5CB040074F8DB /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		42A31A712BB5CB160074F8DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				420609AD2BB31765007E5D5B /* FeedViewController.swift */,
+				42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42A31A722BB5CB2A0074F8DB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				42A31A732BB5CB390074F8DB /* FeedViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		42A31A782BB5D3C00074F8DB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				42A31A762BB5D1B00074F8DB /* LoginService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A9BD07BBC51B60DB942CFB22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				899C19B363C57D9DE00C2AA0 /* Pods_InstaClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCE5C3266FC9E902EEF26DA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				939E96A5B38F6A99B87BC571 /* Pods-InstaClone.debug.xcconfig */,
+				2CB2FA9483E02C6CB9FF4B46 /* Pods-InstaClone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,9 +340,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 420609A12BB30D2D007E5D5B /* Build configuration list for PBXNativeTarget "InstaClone" */;
 			buildPhases = (
+				CE8815270D4F7B45D594C01B /* [CP] Check Pods Manifest.lock */,
 				420609892BB30D2C007E5D5B /* Sources */,
 				4206098A2BB30D2C007E5D5B /* Frameworks */,
 				4206098B2BB30D2C007E5D5B /* Resources */,
+				1B6345555757480FF1CBC525 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,32 +395,82 @@
 			files = (
 				4206099D2BB30D2D007E5D5B /* LaunchScreen.storyboard in Resources */,
 				420609B72BB319B5007E5D5B /* Assets.xcassets in Resources */,
+				424D0C012BB4764000E4EA0E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B6345555757480FF1CBC525 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaClone/Pods-InstaClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaClone/Pods-InstaClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaClone/Pods-InstaClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE8815270D4F7B45D594C01B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		420609892BB30D2C007E5D5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A31A742BB5CB390074F8DB /* FeedViewModelProtocol.swift in Sources */,
+				42A31A6B2BB4ABB80074F8DB /* UserRegistration.swift in Sources */,
 				420609AA2BB31731007E5D5B /* SearchViewController.swift in Sources */,
 				424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */,
 				4294357F2BB38C4200AB5121 /* RegistrationViewController.swift in Sources */,
 				4283FFA42BB440E900711D0C /* UIView+.swift in Sources */,
 				420609912BB30D2C007E5D5B /* AppDelegate.swift in Sources */,
+				42A31A6F2BB5CB040074F8DB /* FeedViewModel.swift in Sources */,
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,
 				420609AC2BB31753007E5D5B /* ImageSelectorViewController.swift in Sources */,
 				42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */,
+				42A31A6D2BB4AD800074F8DB /* RegistrationService.swift in Sources */,
 				424D0BF52BB4548B00E4EA0E /* LoginViewModel.swift in Sources */,
 				429435852BB3A64000AB5121 /* UIButton+.swift in Sources */,
 				424D0BFF2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift in Sources */,
 				420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */,
+				42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */,
 				429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */,
 				420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */,
 				4294357D2BB38C2B00AB5121 /* LoginViewController.swift in Sources */,
+				42A31A662BB4A9400074F8DB /* ImageUploader.swift in Sources */,
+				42A31A772BB5D1B00074F8DB /* LoginService.swift in Sources */,
 				424D0BF82BB4551400E4EA0E /* LoginViewModelProtocol.swift in Sources */,
 				420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */,
 			);
@@ -463,12 +611,14 @@
 		};
 		420609A22BB30D2D007E5D5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 939E96A5B38F6A99B87BC571 /* Pods-InstaClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CTDN3273R3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstaClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -490,12 +640,14 @@
 		};
 		420609A32BB30D2D007E5D5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CB2FA9483E02C6CB9FF4B46 /* Pods-InstaClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CTDN3273R3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstaClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

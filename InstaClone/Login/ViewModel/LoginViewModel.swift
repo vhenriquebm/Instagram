@@ -14,4 +14,8 @@ struct LoginViewModel: LoginViewModelProtocol {
     var isValid: Bool {
         return email?.isEmpty == false && password?.isEmpty == false
     }
+    
+    func login(with email: String, and password: String, completion: @escaping loginCompletion) {
+        LoginService.login(with: email, and: password, completion: completion)
+    }
 }

@@ -13,4 +13,6 @@ protocol RegistrationViewModelProtocol {
     var fullName: String? { get set }
     var userName: String? { get set }
     var isValid: Bool { get }
+    
+    func register(with user: UserRegistration, completion: @escaping registrationCompletion)
 }
