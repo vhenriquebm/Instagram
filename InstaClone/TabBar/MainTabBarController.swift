@@ -17,8 +17,8 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setControllers() {
-        
         let layout = UICollectionViewFlowLayout()
+        
         let feed = createController(unselectedImage: .homeUnselected,
                                     selectedImage: .homeSelected,
                                     rootViewController: FeedViewController(collectionViewLayout: layout))
@@ -35,9 +35,10 @@ class MainTabBarController: UITabBarController {
                                             selectedImage: .likeSelected,
                                             rootViewController: NotificationViewController())
         
+        let profileLayout = UICollectionViewFlowLayout()
         let profile = createController(unselectedImage: .profileUnselected,
                                        selectedImage: .profileSelected,
-                                       rootViewController: ProfileViewController())
+                                       rootViewController: ProfileViewController(collectionViewLayout: profileLayout))
         
         viewControllers = [feed, search, imageSelector, notification, profile]
         

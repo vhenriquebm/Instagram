@@ -189,10 +189,9 @@ class LoginViewController: UIViewController {
         let controller = MainTabBarController()
         let navigation = UINavigationController(rootViewController: controller)
         navigation.modalPresentationStyle = .fullScreen
-        
-        self.dismiss(animated: true) {
-                self.present(navigation, animated: true)
-            }
+        self.present(navigation, animated: true)
+
+       
     }
     
     deinit {
