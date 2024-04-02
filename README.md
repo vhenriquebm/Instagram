@@ -1,6 +1,5 @@
-# Instagram Experience Clone
-
-This project aims to replicate the user experience of Instagram, utilizing the MVVM-C (Model-View-ViewModel-Coordinator) architecture pattern. The project focuses on clean, maintainable code with an emphasis on View Code implementation, eliminating Storyboards for increased flexibility and scalability.
+## Features:
+- Displays the first 150 Pokémon, providing a comprehensive discovery experience.
 
 ## Architecture:
 - **MVVM-C:** Utilizing the MVVM-C architecture pattern for separation of concerns, making the codebase more modular and easier to maintain.
@@ -20,4 +19,10 @@ This project aims to replicate the user experience of Instagram, utilizing the M
 
 ## Disclaimer:
 This project is for educational purposes and personal study only. It is not intended for commercial use or reproduction. It is not affiliated with or endorsed by Instagram. All trademarks are the property of their respective owners.
+
+## Sample Image:
+![Pokemon Image](pokemon_image.png)
+
+
+
 
