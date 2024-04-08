@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct LoginViewModel: LoginViewModelProtocol {
-    var email: String?
-    var password: String?
+class LoginViewModel: LoginViewModelProtocol {
+    private var coordinator: LoginCoordinatorProtocol
+    public var email: String?
+    public var password: String?
+    
+    required init (coordinator: LoginCoordinatorProtocol) {
+        self.coordinator = coordinator
+    }
     
     var isValid: Bool {
         return email?.isEmpty == false && password?.isEmpty == false
@@ -17,5 +22,9 @@ struct LoginViewModel: LoginViewModelProtocol {
     
     func login(with email: String, and password: String, completion: @escaping loginCompletion) {
         LoginService.login(with: email, and: password, completion: completion)
+    }
+    
+    func goToFeed() {
+        coordinator.goToFeed()
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var delegate: LoginViewModelProtocol?
+     var delegate: LoginViewModelProtocol?
     
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -83,7 +83,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        self.delegate = LoginViewModel()
         configureObservers()
     }
     
@@ -180,18 +179,14 @@ class LoginViewController: UIViewController {
             
             guard error == nil  else { return }
             
+            self.dismiss(animated: true)
             self.goToFeedViewController()
             
         })
     }
     
     private func goToFeedViewController() {
-        let controller = MainTabBarController()
-        let navigation = UINavigationController(rootViewController: controller)
-        navigation.modalPresentationStyle = .fullScreen
-        self.present(navigation, animated: true)
-
-       
+        delegate?.goToFeed()
     }
     
     deinit {

@@ -17,6 +17,11 @@
 		420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B02BB317C0007E5D5B /* NotificationsViewController.swift */; };
 		420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B32BB31804007E5D5B /* ProfileViewController.swift */; };
 		420609B72BB319B5007E5D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420609B62BB319B5007E5D5B /* Assets.xcassets */; };
+		424313122BBCC87700BEE02C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313112BBCC87700BEE02C /* LoginCoordinator.swift */; };
+		424313152BBCC9AF00BEE02C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313142BBCC9AF00BEE02C /* Coordinator.swift */; };
+		424313172BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313162BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift */; };
+		4243131A2BBCCD7800BEE02C /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313192BBCCD7800BEE02C /* FeedCoordinator.swift */; };
+		4243131D2BBCCDF400BEE02C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243131C2BBCCDF400BEE02C /* MainCoordinator.swift */; };
 		424D0BF52BB4548B00E4EA0E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BF42BB4548B00E4EA0E /* LoginViewModel.swift */; };
 		424D0BF82BB4551400E4EA0E /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BF72BB4551400E4EA0E /* LoginViewModelProtocol.swift */; };
 		424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */; };
@@ -43,12 +48,12 @@
 		42A7765D2BB7228D007CA1E4 /* ProfileHeaderViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7765C2BB7228D007CA1E4 /* ProfileHeaderViewModelProtocol.swift */; };
 		42A7765F2BB7274F007CA1E4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7765E2BB7274F007CA1E4 /* ProfileViewModel.swift */; };
 		42A776612BB72765007CA1E4 /* ProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A776602BB72765007CA1E4 /* ProfileViewModelProtocol.swift */; };
+		42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA0E312BC4B10D000C85A4 /* UserSession.swift */; };
 		42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */; };
-		50899A781B47D6F45C3363B4 /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899C19B363C57D9DE00C2AA0 /* Pods_InstaClone.framework */; };
+		4385DA8CE4528DD56279A417 /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24A2E39B5C377F290B34B2B /* Pods_InstaClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2CB2FA9483E02C6CB9FF4B46 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		4206098D2BB30D2C007E5D5B /* InstaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		420609902BB30D2C007E5D5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		420609922BB30D2C007E5D5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +66,11 @@
 		420609B02BB317C0007E5D5B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		420609B32BB31804007E5D5B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		420609B62BB319B5007E5D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		424313112BBCC87700BEE02C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		424313142BBCC9AF00BEE02C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		424313162BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		424313192BBCCD7800BEE02C /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
+		4243131C2BBCCDF400BEE02C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		424D0BF42BB4548B00E4EA0E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		424D0BF72BB4551400E4EA0E /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
 		424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -87,9 +97,11 @@
 		42A7765C2BB7228D007CA1E4 /* ProfileHeaderViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModelProtocol.swift; sourceTree = "<group>"; };
 		42A7765E2BB7274F007CA1E4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		42A776602BB72765007CA1E4 /* ProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelProtocol.swift; sourceTree = "<group>"; };
+		42AA0E312BC4B10D000C85A4 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
-		899C19B363C57D9DE00C2AA0 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		939E96A5B38F6A99B87BC571 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
+		8DDEE45566319767A4AE6EDC /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
+		DE0F8ECB46FEB5CAE9B68B70 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
+		E24A2E39B5C377F290B34B2B /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50899A781B47D6F45C3363B4 /* Pods_InstaClone.framework in Frameworks */,
+				4385DA8CE4528DD56279A417 /* Pods_InstaClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +122,7 @@
 				4206098F2BB30D2C007E5D5B /* InstaClone */,
 				4206098E2BB30D2C007E5D5B /* Products */,
 				BCE5C3266FC9E902EEF26DA5 /* Pods */,
-				A9BD07BBC51B60DB942CFB22 /* Frameworks */,
+				FEB63A963C1AD11B1EEBBED5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +137,8 @@
 		4206098F2BB30D2C007E5D5B /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
+				42AA0E302BC4AF27000C85A4 /* App */,
+				424313132BBCC9A600BEE02C /* Coordinator */,
 				429435832BB3A63200AB5121 /* Utils */,
 				429435822BB3A61A00AB5121 /* Custom Views */,
 				4294357B2BB38C1C00AB5121 /* Register */,
@@ -135,13 +149,12 @@
 				420609A82BB3171C007E5D5B /* Search */,
 				420609A72BB3170E007E5D5B /* ImageSelector */,
 				420609A62BB31708007E5D5B /* Feed */,
-				420609902BB30D2C007E5D5B /* AppDelegate.swift */,
-				420609922BB30D2C007E5D5B /* SceneDelegate.swift */,
 				4206099B2BB30D2D007E5D5B /* LaunchScreen.storyboard */,
 				4206099E2BB30D2D007E5D5B /* Info.plist */,
 				420609B62BB319B5007E5D5B /* Assets.xcassets */,
 				424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */,
 				42A31A652BB4A9400074F8DB /* ImageUploader.swift */,
+				42AA0E312BC4B10D000C85A4 /* UserSession.swift */,
 			);
 			path = InstaClone;
 			sourceTree = "<group>";
@@ -149,6 +162,7 @@
 		420609A62BB31708007E5D5B /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				424313182BBCCD6500BEE02C /* Coordinator */,
 				42A31A722BB5CB2A0074F8DB /* Protocols */,
 				42A31A712BB5CB160074F8DB /* View */,
 				42A31A702BB5CB0F0074F8DB /* ViewModel */,
@@ -196,9 +210,43 @@
 		420609B52BB3186D007E5D5B /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				4243131B2BBCCDE300BEE02C /* Coordinator */,
 				420609A42BB30D4B007E5D5B /* MainTabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		424313102BBCC86B00BEE02C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				424313112BBCC87700BEE02C /* LoginCoordinator.swift */,
+				424313162BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		424313132BBCC9A600BEE02C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				424313142BBCC9AF00BEE02C /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		424313182BBCCD6500BEE02C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				424313192BBCCD7800BEE02C /* FeedCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4243131B2BBCCDE300BEE02C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4243131C2BBCCDF400BEE02C /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		424D0BF22BB4547900E4EA0E /* View */ = {
@@ -253,6 +301,7 @@
 		4294357A2BB38C1400AB5121 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				424313102BBCC86B00BEE02C /* Coordinator */,
 				42A31A782BB5D3C00074F8DB /* Service */,
 				424D0BF62BB4550600E4EA0E /* Protocols */,
 				424D0BF32BB4547F00E4EA0E /* ViewModel */,
@@ -399,21 +448,30 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		A9BD07BBC51B60DB942CFB22 /* Frameworks */ = {
+		42AA0E302BC4AF27000C85A4 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				899C19B363C57D9DE00C2AA0 /* Pods_InstaClone.framework */,
+				420609902BB30D2C007E5D5B /* AppDelegate.swift */,
+				420609922BB30D2C007E5D5B /* SceneDelegate.swift */,
 			);
-			name = Frameworks;
+			path = App;
 			sourceTree = "<group>";
 		};
 		BCE5C3266FC9E902EEF26DA5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				939E96A5B38F6A99B87BC571 /* Pods-InstaClone.debug.xcconfig */,
-				2CB2FA9483E02C6CB9FF4B46 /* Pods-InstaClone.release.xcconfig */,
+				DE0F8ECB46FEB5CAE9B68B70 /* Pods-InstaClone.debug.xcconfig */,
+				8DDEE45566319767A4AE6EDC /* Pods-InstaClone.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FEB63A963C1AD11B1EEBBED5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E24A2E39B5C377F290B34B2B /* Pods_InstaClone.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,11 +481,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 420609A12BB30D2D007E5D5B /* Build configuration list for PBXNativeTarget "InstaClone" */;
 			buildPhases = (
-				CE8815270D4F7B45D594C01B /* [CP] Check Pods Manifest.lock */,
+				BAA683CE518B660B4E9AABA3 /* [CP] Check Pods Manifest.lock */,
 				420609892BB30D2C007E5D5B /* Sources */,
 				4206098A2BB30D2C007E5D5B /* Frameworks */,
 				4206098B2BB30D2C007E5D5B /* Resources */,
-				1B6345555757480FF1CBC525 /* [CP] Embed Pods Frameworks */,
+				54A94C6E3510D9A7180831C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -485,7 +543,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B6345555757480FF1CBC525 /* [CP] Embed Pods Frameworks */ = {
+		54A94C6E3510D9A7180831C1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -502,7 +560,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaClone/Pods-InstaClone-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE8815270D4F7B45D594C01B /* [CP] Check Pods Manifest.lock */ = {
+		BAA683CE518B660B4E9AABA3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -533,15 +591,20 @@
 			files = (
 				42A31A742BB5CB390074F8DB /* FeedViewModelProtocol.swift in Sources */,
 				42A31A6B2BB4ABB80074F8DB /* UserRegistration.swift in Sources */,
+				424313122BBCC87700BEE02C /* LoginCoordinator.swift in Sources */,
 				42A776612BB72765007CA1E4 /* ProfileViewModelProtocol.swift in Sources */,
+				4243131A2BBCCD7800BEE02C /* FeedCoordinator.swift in Sources */,
 				420609AA2BB31731007E5D5B /* SearchViewController.swift in Sources */,
 				424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */,
 				4294357F2BB38C4200AB5121 /* RegistrationViewController.swift in Sources */,
 				4283FFA42BB440E900711D0C /* UIView+.swift in Sources */,
+				424313152BBCC9AF00BEE02C /* Coordinator.swift in Sources */,
+				4243131D2BBCCDF400BEE02C /* MainCoordinator.swift in Sources */,
 				420609912BB30D2C007E5D5B /* AppDelegate.swift in Sources */,
 				42A7765D2BB7228D007CA1E4 /* ProfileHeaderViewModelProtocol.swift in Sources */,
 				42A31A6F2BB5CB040074F8DB /* FeedViewModel.swift in Sources */,
 				42A776572BB71C3E007CA1E4 /* User.swift in Sources */,
+				424313172BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift in Sources */,
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,
 				420609AC2BB31753007E5D5B /* ImageSelectorViewController.swift in Sources */,
@@ -557,6 +620,7 @@
 				420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */,
 				42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */,
 				429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */,
+				42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */,
 				42A31A802BB5EC420074F8DB /* ProfileCollectionViewCell.swift in Sources */,
 				420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */,
 				4294357D2BB38C2B00AB5121 /* LoginViewController.swift in Sources */,
@@ -703,7 +767,7 @@
 		};
 		420609A22BB30D2D007E5D5B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 939E96A5B38F6A99B87BC571 /* Pods-InstaClone.debug.xcconfig */;
+			baseConfigurationReference = DE0F8ECB46FEB5CAE9B68B70 /* Pods-InstaClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -732,7 +796,7 @@
 		};
 		420609A32BB30D2D007E5D5B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CB2FA9483E02C6CB9FF4B46 /* Pods-InstaClone.release.xcconfig */;
+			baseConfigurationReference = 8DDEE45566319767A4AE6EDC /* Pods-InstaClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

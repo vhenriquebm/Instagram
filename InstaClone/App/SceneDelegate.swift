@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseCore
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -50,12 +51,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
+//MARK: - Start Coordinator
+
 extension SceneDelegate {
     func start(with scene: UIWindowScene) {
-        let controller = UINavigationController(rootViewController: MainTabBarController())
+        let navigation = UINavigationController()
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = controller
-        window?.makeKeyAndVisible()
+        
+        if UserSession.shared.isUserAuthenticated() {
+            let coordinator = MainCoordinator(navigation: navigation, window: window)
+            coordinator.start()
+        } else {
+            let coordinator =  LoginCoordinator(navigation: navigation, window: window)
+            coordinator.start()
+        }
     }
 }
+
+
+
 

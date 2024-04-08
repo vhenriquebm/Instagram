@@ -15,7 +15,6 @@ class FeedViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        checkUserAuthentication()
         delegate = FeedViewModel()
     }
     
@@ -44,18 +43,9 @@ class FeedViewController: UICollectionViewController {
     
     
     private func goToLogin() {
-        let controller = LoginViewController()
-        let navigation = UINavigationController(rootViewController: controller)
-        navigation.modalPresentationStyle = .fullScreen        
-        self.present(navigation, animated: true)
-    }
-    
-    private func checkUserAuthentication() {
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                self.goToLogin()
-            }
-        }
+        guard let navigation = self.navigationController else { return }
+        let coordinator =  LoginCoordinator(navigation: navigation)
+        coordinator.start()
     }
     
     @objc private func signOut() {
