@@ -21,3 +21,7 @@ This project aims to replicate the user experience of Instagram, utilizing the M
 ## Disclaimer:
 This project is for educational purposes and personal study only. It is not intended for commercial use or reproduction. It is not affiliated with or endorsed by Instagram. All trademarks are the property of their respective owners.
 
+
+
+
+
