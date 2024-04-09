@@ -8,12 +8,22 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
+    private var user: User?
+    var viewModel: MainTabBarViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setControllers()
         self.tabBar.backgroundColor = .white
         self.tabBar.tintColor = .black
+        self.viewModel = MainTabBarViewModel()
+        getUser()
+    }
+    
+    private func getUser() {
+        viewModel?.getUser(completion: { user in
+            self.user = user
+            self.setControllers()
+        })
     }
     
     private func setControllers() {
@@ -36,9 +46,15 @@ class MainTabBarController: UITabBarController {
                                             rootViewController: NotificationViewController())
         
         let profileLayout = UICollectionViewFlowLayout()
+        
+        
+        let controller = ProfileViewController(collectionViewLayout: profileLayout)
+        let viewModel = ProfileViewModel(user: user!)
+        controller.viewModel = viewModel
         let profile = createController(unselectedImage: .profileUnselected,
                                        selectedImage: .profileSelected,
-                                       rootViewController: ProfileViewController(collectionViewLayout: profileLayout))
+                                       rootViewController: controller)
+        
         
         viewControllers = [feed, search, imageSelector, notification, profile]
         

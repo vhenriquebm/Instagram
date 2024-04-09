@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ProfileViewModelProtocol {
-    func getUser(completion: @escaping profileCompletion)
+    var getUser: User { get }
 }

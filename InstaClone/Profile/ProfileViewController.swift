@@ -11,14 +11,12 @@ private let headerIndentifier = "ProfileHeader"
 private let profileIdentifier = "ProfileCell"
 
 class ProfileViewController: UICollectionViewController {
-    
     var viewModel: ProfileViewModel?
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        self.viewModel = ProfileViewModel()
         getUser()
     }
     
@@ -33,17 +31,21 @@ class ProfileViewController: UICollectionViewController {
                                 withReuseIdentifier: headerIndentifier)
     }
     
-    
     private func getUser() {
-        viewModel?.getUser(completion: { user in
-            DispatchQueue.main.async {
-                self.user = user
-                self.navigationItem.title = user.username
-                self.collectionView.reloadData()
-            }
-        })
+        self.user = viewModel?.getUser
+        self.navigationItem.title = user?.username
     }
     
+    
+//    private func getUser() {
+//        viewModel?.getUser(completion: { user in
+//            DispatchQueue.main.async {
+//                self.user = user
+//                self.navigationItem.title = user.username
+//                self.collectionView.reloadData()
+//            }
+//        })
+//    }
 }
 
 extension ProfileViewController {
@@ -68,7 +70,7 @@ extension ProfileViewController {
         
         if let user = user {
             print ("Tem usuário")
-
+            
             header.viewModel = ProfileHeaderViewModel(user: user)
         } else {
             print ("Não tem usuário")

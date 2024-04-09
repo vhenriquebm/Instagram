@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct ProfileViewModel: ProfileViewModelProtocol {
-    public func getUser(completion: @escaping profileCompletion) {
-        ProfileService.getUser(completion: completion)
+class ProfileViewModel: ProfileViewModelProtocol {
+    private var user: User
+    
+    required init(user: User) {
+        self.user = user
+    }
+    
+    var getUser: User {
+        return user
     }
 }
