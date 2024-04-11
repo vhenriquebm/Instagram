@@ -51,6 +51,8 @@
 		42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA0E312BC4B10D000C85A4 /* UserSession.swift */; };
 		42AA0E362BC5F69C000C85A4 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA0E352BC5F69C000C85A4 /* MainTabBarViewModel.swift */; };
 		42AA0E392BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA0E382BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift */; };
+		42AA0E3D2BC75899000C85A4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA0E3C2BC75899000C85A4 /* UserTableViewCell.swift */; };
+		42AA0E3F2BC759E9000C85A4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA0E3E2BC759E9000C85A4 /* SearchView.swift */; };
 		42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */; };
 		4385DA8CE4528DD56279A417 /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24A2E39B5C377F290B34B2B /* Pods_InstaClone.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		42AA0E312BC4B10D000C85A4 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		42AA0E352BC5F69C000C85A4 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		42AA0E382BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelProtocol.swift; sourceTree = "<group>"; };
+		42AA0E3C2BC75899000C85A4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		42AA0E3E2BC759E9000C85A4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		42BB1A992BB35226007F3865 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		8DDEE45566319767A4AE6EDC /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		DE0F8ECB46FEB5CAE9B68B70 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,7 +189,7 @@
 		420609A82BB3171C007E5D5B /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				420609A92BB31731007E5D5B /* SearchViewController.swift */,
+				42AA0E3A2BC7587A000C85A4 /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -487,6 +491,24 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		42AA0E3A2BC7587A000C85A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42AA0E3B2BC75884000C85A4 /* Cell */,
+				420609A92BB31731007E5D5B /* SearchViewController.swift */,
+				42AA0E3E2BC759E9000C85A4 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42AA0E3B2BC75884000C85A4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				42AA0E3C2BC75899000C85A4 /* UserTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		BCE5C3266FC9E902EEF26DA5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +650,7 @@
 				42AA0E362BC5F69C000C85A4 /* MainTabBarViewModel.swift in Sources */,
 				424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */,
 				4294357F2BB38C4200AB5121 /* RegistrationViewController.swift in Sources */,
+				42AA0E3D2BC75899000C85A4 /* UserTableViewCell.swift in Sources */,
 				4283FFA42BB440E900711D0C /* UIView+.swift in Sources */,
 				424313152BBCC9AF00BEE02C /* Coordinator.swift in Sources */,
 				4243131D2BBCCDF400BEE02C /* MainCoordinator.swift in Sources */,
@@ -650,6 +673,7 @@
 				424D0BFF2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift in Sources */,
 				420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */,
 				42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */,
+				42AA0E3F2BC759E9000C85A4 /* SearchView.swift in Sources */,
 				429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */,
 				42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */,
 				42AA0E392BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift in Sources */,
