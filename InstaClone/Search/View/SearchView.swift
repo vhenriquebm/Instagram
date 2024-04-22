@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchView: UIView {
-    private let profileImageView: UIImageView = {
+    let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .lightGray
@@ -18,7 +18,7 @@ class SearchView: UIView {
         return imageView
     }()
     
-    private let userNambeLabel: UILabel = {
+    let userNambeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "venom"
@@ -26,7 +26,7 @@ class SearchView: UIView {
         return label
     }()
     
-    private let fullNameLabel: UILabel = {
+    let fullNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.text = "Eddie Brock"

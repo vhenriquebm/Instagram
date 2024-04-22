@@ -9,8 +9,6 @@ import Foundation
 
 class MainTabBarViewModel: MainTabBarViewModelProtocol {
     public func getUser(completion: @escaping profileCompletion) {
-        
-        print ("DEBUG - ENTROU NA VIEW MODEL")
         ProfileService.getUser(completion: completion)
     }
 }

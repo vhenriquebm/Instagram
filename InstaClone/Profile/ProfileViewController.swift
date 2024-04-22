@@ -36,16 +36,6 @@ class ProfileViewController: UICollectionViewController {
         self.navigationItem.title = user?.username
     }
     
-    
-//    private func getUser() {
-//        viewModel?.getUser(completion: { user in
-//            DispatchQueue.main.async {
-//                self.user = user
-//                self.navigationItem.title = user.username
-//                self.collectionView.reloadData()
-//            }
-//        })
-//    }
 }
 
 extension ProfileViewController {

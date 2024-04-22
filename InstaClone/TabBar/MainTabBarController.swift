@@ -35,7 +35,7 @@ class MainTabBarController: UITabBarController {
         
         let search = createController(unselectedImage: .searchSelected,
                                       selectedImage: .searchUnselected,
-                                      rootViewController: SearchViewController())
+                                      rootViewController: createSearchController())
         
         let imageSelector = createController(unselectedImage: .plusUnselected,
                                              selectedImage: .plusPhoto,
@@ -66,5 +66,15 @@ class MainTabBarController: UITabBarController {
         navigation.tabBarItem.selectedImage = selectedImage
         navigation.navigationBar.tintColor = .black
         return navigation
+    }
+}
+
+extension MainTabBarController {
+    
+    func createSearchController() -> SearchViewController {
+        let controller = SearchViewController()
+        let viewModel = SearchViewModel()
+        controller.viewModel = viewModel
+        return controller
     }
 }
