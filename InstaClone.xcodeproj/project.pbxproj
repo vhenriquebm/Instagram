@@ -427,8 +427,8 @@
 		42A31A792BB5E4630074F8DB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				42A31A7D2BB5E4CD0074F8DB /* ProfileHeader.swift */,
-				42A31A7F2BB5EC420074F8DB /* ProfileCollectionViewCell.swift */,
+				42BAC5E82BD87B2200B80779 /* Cell */,
+				42BAC5E72BD87B1800B80779 /* Header */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -530,6 +530,22 @@
 			isa = PBXGroup;
 			children = (
 				42AA0E3C2BC75899000C85A4 /* UserTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		42BAC5E72BD87B1800B80779 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				42A31A7D2BB5E4CD0074F8DB /* ProfileHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		42BAC5E82BD87B2200B80779 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				42A31A7F2BB5EC420074F8DB /* ProfileCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
