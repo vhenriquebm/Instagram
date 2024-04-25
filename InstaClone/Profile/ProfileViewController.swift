@@ -18,6 +18,8 @@ class ProfileViewController: UICollectionViewController {
         super.viewDidLoad()
         configureView()
         getUser()
+        checkIfUserIsFollowed()
+        getUserStats()
     }
     
     func configureView() {
@@ -36,6 +38,29 @@ class ProfileViewController: UICollectionViewController {
         self.navigationItem.title = user?.username
     }
     
+    private func checkIfUserIsFollowed() {
+        guard let uid = user?.uid else { return }
+        
+        viewModel?.checkIfUserIsFollowed(uid: uid, completion: { isFollowed in
+            self.user?.isFollewed = isFollowed
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        })
+    }
+    
+    private func getUserStats() {
+        guard let uid = user?.uid else { return }
+
+        viewModel?.getUserStats(uid: uid, completion: { stats in
+            self.user?.userStats = stats
+            self.collectionView.reloadData()
+            
+            print ("DEBUG - STATS - \(stats)")
+
+        })
+    }
 }
 
 extension ProfileViewController {
@@ -43,10 +68,6 @@ extension ProfileViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-    
-    
-    
-    
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -62,7 +83,7 @@ extension ProfileViewController {
         
         if let user = user {
             header.viewModel = ProfileHeaderViewModel(user: user)
-        } 
+        }
         
         return header
     }
@@ -90,6 +111,24 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
 
 extension ProfileViewController: ProfileHeaderDelegate {
     func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User) {
-        
+        if user.isCurrentUser {
+            
+        } else if user.isFollewed {
+            viewModel?.unfollow(uuid: user.uid, completion: { error in
+                self.user?.isFollewed = false
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            })
+        } else {
+            viewModel?.follow(uuid: user.uid, completion: { error in
+                self.user?.isFollewed = true
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            })
+        }
     }
 }
