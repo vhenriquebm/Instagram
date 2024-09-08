@@ -78,3 +78,13 @@ extension MainTabBarController {
         return controller
     }
 }
+
+//MARK: - UITabBarControllerDelegate
+
+extension MainTabBarController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let index = viewControllers?.firstIndex(of: viewController)
+        return true
+    }
+}

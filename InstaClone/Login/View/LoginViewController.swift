@@ -132,7 +132,9 @@ class LoginViewController: UIViewController {
     
     @objc private func goToRegister() {
         let controller = RegistrationViewController()
-        self.navigationController?.pushViewController(controller, animated: false)
+        let navigation = UINavigationController(rootViewController: controller)
+        navigation.modalPresentationStyle = .fullScreen
+        self.present(navigation, animated: true, completion: nil)
     }
     
     @objc private func textDidChange(sender: UITextField) {
