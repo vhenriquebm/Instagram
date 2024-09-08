@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import YPImagePicker
 
 class MainTabBarController: UITabBarController {
     private var user: User?
@@ -27,6 +28,8 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setControllers() {
+        self.delegate = self
+        
         let layout = UICollectionViewFlowLayout()
         
         let feed = createController(unselectedImage: .homeUnselected,
@@ -62,10 +65,24 @@ class MainTabBarController: UITabBarController {
     
     private func createController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: rootViewController)
-        navigation.tabBarItem.image = unselectedImage
-        navigation.tabBarItem.selectedImage = selectedImage
+        
+        let tabBarItemSize = CGSize(width: 25, height: 25)
+        let resizedUnselectedImage = unselectedImage.resized(to: tabBarItemSize)
+        let resizedSelectedImage = selectedImage.resized(to: tabBarItemSize)
+        
+        navigation.tabBarItem.image = resizedUnselectedImage
+        navigation.tabBarItem.selectedImage = resizedSelectedImage
         navigation.navigationBar.tintColor = .black
+        
         return navigation
+    }
+    
+    private func didFinishPickingMedia(_ picker: YPImagePicker) {
+        picker.didFinishPicking { items, cancelled in
+            picker.dismiss(animated: true) {
+                guard let selectedImage = items.singlePhoto?.image else { return }
+            }
+        }
     }
 }
 
@@ -85,6 +102,27 @@ extension MainTabBarController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let index = viewControllers?.firstIndex(of: viewController)
+        
+        if index == 2 {
+            var pickerConfiguration = YPImagePickerConfiguration()
+            pickerConfiguration.library.mediaType = .photo
+            pickerConfiguration.shouldSaveNewPicturesToAlbum = false
+            pickerConfiguration.startOnScreen = .library
+            pickerConfiguration.screens = [.library]
+            pickerConfiguration.hidesStatusBar = false
+            pickerConfiguration.hidesBottomBar = false
+            pickerConfiguration.library.maxNumberOfItems = 1
+            
+            let picker = YPImagePicker(configuration: pickerConfiguration)
+            picker.modalPresentationStyle = .fullScreen
+            present(picker, animated: true, completion: nil)
+            
+            didFinishPickingMedia(picker)
+        }
+        
         return true
     }
 }
+
+
+

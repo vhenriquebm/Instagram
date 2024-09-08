@@ -27,6 +27,7 @@
 		424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */; };
 		424D0BFF2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BFE2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift */; };
 		424D0C012BB4764000E4EA0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */; };
+		425331732C8E4E9C0060D28D /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425331722C8E4E9C0060D28D /* UIImage+.swift */; };
 		4281F3602BC8A50500A45350 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4281F35F2BC8A50500A45350 /* SearchViewModel.swift */; };
 		4281F3632BC8A52300A45350 /* SearchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4281F3622BC8A52300A45350 /* SearchViewModelProtocol.swift */; };
 		4283FFA42BB440E900711D0C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283FFA32BB440E900711D0C /* UIView+.swift */; };
@@ -83,6 +84,7 @@
 		424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		424D0BFE2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelProtocol.swift; sourceTree = "<group>"; };
 		424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		425331722C8E4E9C0060D28D /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		4281F35F2BC8A50500A45350 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		4281F3622BC8A52300A45350 /* SearchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelProtocol.swift; sourceTree = "<group>"; };
 		4283FFA32BB440E900711D0C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			children = (
 				429435842BB3A64000AB5121 /* UIButton+.swift */,
 				4283FFA32BB440E900711D0C /* UIView+.swift */,
+				425331722C8E4E9C0060D28D /* UIImage+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				424313172BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift in Sources */,
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,
+				425331732C8E4E9C0060D28D /* UIImage+.swift in Sources */,
 				420609AC2BB31753007E5D5B /* ImageSelectorViewController.swift in Sources */,
 				42A7765A2BB72250007CA1E4 /* ProfileHeaderViewModel.swift in Sources */,
 				42A7764E2BB719F7007CA1E4 /* Constants.swift in Sources */,
