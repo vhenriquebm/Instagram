@@ -42,7 +42,7 @@ class MainTabBarController: UITabBarController {
         
         let imageSelector = createController(unselectedImage: .plusUnselected,
                                              selectedImage: .plusPhoto,
-                                             rootViewController: ImageSelectorViewController())
+                                             rootViewController: UploadPostViewController())
         
         let notification = createController(unselectedImage: .likeUnselected,
                                             selectedImage: .likeSelected,
@@ -79,8 +79,13 @@ class MainTabBarController: UITabBarController {
     
     private func didFinishPickingMedia(_ picker: YPImagePicker) {
         picker.didFinishPicking { items, cancelled in
-            picker.dismiss(animated: true) {
+            picker.dismiss(animated: false) {
                 guard let selectedImage = items.singlePhoto?.image else { return }
+                
+                let controller = UploadPostViewController()
+                let navigation =  UINavigationController(rootViewController: controller)
+                navigation.modalPresentationStyle = .fullScreen
+                self.present(navigation, animated: false)
             }
         }
     }
