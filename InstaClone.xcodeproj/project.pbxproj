@@ -61,6 +61,12 @@
 		42F5BF4F2C92099000DBFFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F5BF4E2C92099000DBFFBD /* Assets.xcassets */; };
 		42F5BF532C920D1500DBFFBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42F5BF512C920D1500DBFFBD /* Localizable.strings */; };
 		42F5BF552C9210E900DBFFBD /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF542C9210E900DBFFBD /* InputTextView.swift */; };
+		42F5BF592C92258100DBFFBD /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF582C92258100DBFFBD /* UploadPostViewModel.swift */; };
+		42F5BF5C2C92259D00DBFFBD /* UploadPostViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF5B2C92259D00DBFFBD /* UploadPostViewModelProtocol.swift */; };
+		42F5BF5F2C92273E00DBFFBD /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF5E2C92273E00DBFFBD /* PostService.swift */; };
+		42F5BF622C92284500DBFFBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF612C92284500DBFFBD /* Post.swift */; };
+		42F5BF642C9228B400DBFFBD /* PostServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF632C9228B400DBFFBD /* PostServiceProtocol.swift */; };
+		42F5BF662C9230DF00DBFFBD /* UploadPostDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF652C9230DF00DBFFBD /* UploadPostDelegate.swift */; };
 		4385DA8CE4528DD56279A417 /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E24A2E39B5C377F290B34B2B /* Pods_InstaClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +127,12 @@
 		42F5BF4E2C92099000DBFFBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42F5BF522C920D1500DBFFBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		42F5BF542C9210E900DBFFBD /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
+		42F5BF582C92258100DBFFBD /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
+		42F5BF5B2C92259D00DBFFBD /* UploadPostViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModelProtocol.swift; sourceTree = "<group>"; };
+		42F5BF5E2C92273E00DBFFBD /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		42F5BF612C92284500DBFFBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		42F5BF632C9228B400DBFFBD /* PostServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceProtocol.swift; sourceTree = "<group>"; };
+		42F5BF652C9230DF00DBFFBD /* UploadPostDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostDelegate.swift; sourceTree = "<group>"; };
 		8DDEE45566319767A4AE6EDC /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		DE0F8ECB46FEB5CAE9B68B70 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 		E24A2E39B5C377F290B34B2B /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -565,7 +577,11 @@
 		42F5BF4B2C9205E900DBFFBD /* Upload Posts */ = {
 			isa = PBXGroup;
 			children = (
-				42F5BF4C2C92060A00DBFFBD /* UploadPostViewController.swift */,
+				42F5BF602C92283A00DBFFBD /* Model */,
+				42F5BF5D2C92273000DBFFBD /* Service */,
+				42F5BF5A2C92259200DBFFBD /* Protocols */,
+				42F5BF572C92257000DBFFBD /* ViewModel */,
+				42F5BF562C92256500DBFFBD /* View */,
 			);
 			path = "Upload Posts";
 			sourceTree = "<group>";
@@ -576,6 +592,48 @@
 				42F5BF512C920D1500DBFFBD /* Localizable.strings */,
 			);
 			path = Localizable;
+			sourceTree = "<group>";
+		};
+		42F5BF562C92256500DBFFBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42F5BF4C2C92060A00DBFFBD /* UploadPostViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42F5BF572C92257000DBFFBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42F5BF582C92258100DBFFBD /* UploadPostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		42F5BF5A2C92259200DBFFBD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				42F5BF5B2C92259D00DBFFBD /* UploadPostViewModelProtocol.swift */,
+				42F5BF632C9228B400DBFFBD /* PostServiceProtocol.swift */,
+				42F5BF652C9230DF00DBFFBD /* UploadPostDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		42F5BF5D2C92273000DBFFBD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				42F5BF5E2C92273E00DBFFBD /* PostService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		42F5BF602C92283A00DBFFBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42F5BF612C92284500DBFFBD /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BCE5C3266FC9E902EEF26DA5 /* Pods */ = {
@@ -720,6 +778,7 @@
 				4281F3602BC8A50500A45350 /* SearchViewModel.swift in Sources */,
 				42AA0E362BC5F69C000C85A4 /* MainTabBarViewModel.swift in Sources */,
 				424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */,
+				42F5BF662C9230DF00DBFFBD /* UploadPostDelegate.swift in Sources */,
 				4294357F2BB38C4200AB5121 /* RegistrationViewController.swift in Sources */,
 				42AA0E3D2BC75899000C85A4 /* UserTableViewCell.swift in Sources */,
 				4283FFA42BB440E900711D0C /* UIView+.swift in Sources */,
@@ -734,6 +793,7 @@
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,
 				425331732C8E4E9C0060D28D /* UIImage+.swift in Sources */,
+				42F5BF5C2C92259D00DBFFBD /* UploadPostViewModelProtocol.swift in Sources */,
 				420609AC2BB31753007E5D5B /* ImageSelectorViewController.swift in Sources */,
 				42A7765A2BB72250007CA1E4 /* ProfileHeaderViewModel.swift in Sources */,
 				42A7764E2BB719F7007CA1E4 /* Constants.swift in Sources */,
@@ -750,15 +810,19 @@
 				42BAC5E32BD715A100B80779 /* ProfileCoordinator.swift in Sources */,
 				42AA0E3F2BC759E9000C85A4 /* SearchView.swift in Sources */,
 				429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */,
+				42F5BF5F2C92273E00DBFFBD /* PostService.swift in Sources */,
 				42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */,
+				42F5BF642C9228B400DBFFBD /* PostServiceProtocol.swift in Sources */,
 				42AA0E392BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift in Sources */,
 				42A31A802BB5EC420074F8DB /* ProfileCollectionViewCell.swift in Sources */,
 				420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */,
 				4294357D2BB38C2B00AB5121 /* LoginViewController.swift in Sources */,
+				42F5BF592C92258100DBFFBD /* UploadPostViewModel.swift in Sources */,
 				42A31A662BB4A9400074F8DB /* ImageUploader.swift in Sources */,
 				42A31A772BB5D1B00074F8DB /* LoginService.swift in Sources */,
 				4281F3632BC8A52300A45350 /* SearchViewModelProtocol.swift in Sources */,
 				424D0BF82BB4551400E4EA0E /* LoginViewModelProtocol.swift in Sources */,
+				42F5BF622C92284500DBFFBD /* Post.swift in Sources */,
 				420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */,
 				42A31A7E2BB5E4CD0074F8DB /* ProfileHeader.swift in Sources */,
 			);

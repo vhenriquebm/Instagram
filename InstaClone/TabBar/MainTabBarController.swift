@@ -42,7 +42,7 @@ class MainTabBarController: UITabBarController {
         
         let imageSelector = createController(unselectedImage: .plusUnselected,
                                              selectedImage: .plusPhoto,
-                                             rootViewController: UploadPostViewController())
+                                             rootViewController: ImageSelectorViewController())
         
         let notification = createController(unselectedImage: .likeUnselected,
                                             selectedImage: .likeSelected,
@@ -83,6 +83,12 @@ class MainTabBarController: UITabBarController {
                 guard let selectedImage = items.singlePhoto?.image else { return }
                 
                 let controller = UploadPostViewController()
+                let viewModel = UploadPostViewModel(service: PostService())
+                
+                controller.selectedImage = selectedImage
+                controller.viewModel = viewModel
+                controller.delegate = self
+                
                 let navigation =  UINavigationController(rootViewController: controller)
                 navigation.modalPresentationStyle = .fullScreen
                 self.present(navigation, animated: false)
@@ -129,5 +135,12 @@ extension MainTabBarController: UITabBarControllerDelegate {
     }
 }
 
+//MARK: - UploadPostDelegate
 
-
+extension MainTabBarController: UploadPostDelegate {
+    
+    func didFinishUploadingPost(_ controller: UploadPostViewController) {
+        selectedIndex = 0
+        controller.dismiss(animated: true)
+    }
+}

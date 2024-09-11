@@ -8,13 +8,18 @@
 import UIKit
 
 class UploadPostViewController: UIViewController {
+    var viewModel: UploadPostViewModelProtocol?
+    var delegate: UploadPostDelegate?
+    
+    var selectedImage: UIImage? {
+        didSet { photoImageView.image = selectedImage }
+    }
     
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = .venom7
         return imageView
     }()
     
@@ -98,17 +103,24 @@ class UploadPostViewController: UIViewController {
     }
     
     @objc private func didTapCancel() {
-        dismiss(animated: true)
+        self.delegate?.didFinishUploadingPost(self)
     }
     
     @objc private func didTapShare() {
+        guard let selectedImage = selectedImage,
+              let captionText = captionTextView.text else { return }
         
-    }
-    
-    private func checkMaxLength(_ textView: UITextView) {
-        if (textView.text.count) > 100 {
-            textView.deleteBackward()
-        }
+        let post = Post(image: selectedImage, caption: captionText)
+        
+        viewModel?.upload(post: post, completion: { error in
+            
+            if let error = error  {
+                print (error)
+            }
+            
+            self.delegate?.didFinishUploadingPost(self)
+            
+        })
     }
 }
 
@@ -116,7 +128,7 @@ class UploadPostViewController: UIViewController {
 
 extension UploadPostViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        checkMaxLength(textView)
+        viewModel?.checkMaxLength(textView)
         let count = textView.text.count
         characterCountLabel.text = "\(count)/100"
     }
