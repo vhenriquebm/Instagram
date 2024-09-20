@@ -110,10 +110,13 @@ class UploadPostViewController: UIViewController {
         guard let selectedImage = selectedImage,
               let captionText = captionTextView.text else { return }
         
+        self.showLoader(true)
+        
         let post = Post(image: selectedImage, caption: captionText)
         
         viewModel?.upload(post: post, completion: { error in
-            
+            self.showLoader(false)
+
             if let error = error  {
                 print (error)
             }

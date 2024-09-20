@@ -66,14 +66,14 @@ public extension StorageReference {
       }
       uploadTask.observe(.failure) { snapshot in
         continuation.resume(with: .failure(
-          snapshot.error ?? StorageError.internalError("Internal Storage Error in putDataAsync")
+          snapshot.error ?? StorageError
+            .internalError(message: "Internal Storage Error in putDataAsync")
         ))
       }
     }
   }
 
   /// Asynchronously uploads a file to the currently specified StorageReference.
-  /// `putDataAsync` should be used instead of `putFileAsync` in Extensions.
   ///
   /// - Parameters:
   ///   - url: A URL representing the system file path of the object to be uploaded.
@@ -104,7 +104,8 @@ public extension StorageReference {
       }
       uploadTask.observe(.failure) { snapshot in
         continuation.resume(with: .failure(
-          snapshot.error ?? StorageError.internalError("Internal Storage Error in putFileAsync")
+          snapshot.error ?? StorageError
+            .internalError(message: "Internal Storage Error in putFileAsync")
         ))
       }
     }
@@ -138,7 +139,8 @@ public extension StorageReference {
       }
       downloadTask.observe(.failure) { snapshot in
         continuation.resume(with: .failure(
-          snapshot.error ?? StorageError.internalError("Internal Storage Error in writeAsync")
+          snapshot.error ?? StorageError
+            .internalError(message: "Internal Storage Error in writeAsync")
         ))
       }
     }

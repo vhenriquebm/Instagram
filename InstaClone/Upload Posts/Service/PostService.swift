@@ -7,7 +7,7 @@
 
 import Foundation
 import FirebaseAuth
-import FirebaseFirestoreInternal
+import FirebaseFirestore
 
 struct PostService: PostServiceProtocol {
     func upload(post: Post, completion: @escaping (FirestoreCompletion)) {
@@ -25,6 +25,12 @@ struct PostService: PostServiceProtocol {
             
             COLLECTION_POSTS.addDocument(data: data, completion: completion)
             
+        }
+    }
+    
+    func getPosts() {
+        COLLECTION_POSTS.getDocuments { snapshot, error in
+            guard let data = snapshot?.documents else { return }
         }
     }
 }
