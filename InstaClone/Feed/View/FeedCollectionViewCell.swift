@@ -8,7 +8,6 @@
 import UIKit
 
 class FeedCollectionViewCell: UICollectionViewCell {
-    
     static let identifier = "FeedCollectionViewCell"
     
     private lazy var profileImageView: UIImageView = {

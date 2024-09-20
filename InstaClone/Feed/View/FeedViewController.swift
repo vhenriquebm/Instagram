@@ -10,12 +10,12 @@ import Firebase
 
 
 class FeedViewController: UICollectionViewController {
-    private var delegate: FeedViewModelProtocol?
+    private var viewModel: FeedViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        delegate = FeedViewModel()
+        viewModel = FeedViewModel(service: FeedService())
     }
     
     private func configureUI() {
@@ -24,7 +24,7 @@ class FeedViewController: UICollectionViewController {
         collectionView.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: FeedCollectionViewCell.identifier)
         
         
-      configureNavigationBar()
+        configureNavigationBar()
         
         
         navigationItem.title = "Feed"
@@ -35,12 +35,17 @@ class FeedViewController: UICollectionViewController {
         
         let navigationButton = UIBarButtonItem(title: "Logout",
                                                style: .plain,
-                                               target: self, 
+                                               target: self,
                                                action: #selector(signOut))
         
         navigationItem.leftBarButtonItem = navigationButton
     }
     
+    private func getPosts() {
+        viewModel?.getPosts {
+            collectionView.reloadData()
+        }
+    }
     
     private func goToLogin() {
         guard let navigation = self.navigationController else { return }
@@ -49,7 +54,7 @@ class FeedViewController: UICollectionViewController {
     }
     
     @objc private func signOut() {
-        delegate?.signOut()
+        viewModel?.signOut()
         goToLogin()
     }
 }
@@ -59,12 +64,14 @@ class FeedViewController: UICollectionViewController {
 extension FeedViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.posts.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.identifier, for: indexPath) as! FeedCollectionViewCell
+        
+    
         
         return cell
     }

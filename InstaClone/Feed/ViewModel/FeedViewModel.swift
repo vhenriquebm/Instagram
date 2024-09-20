@@ -8,8 +8,18 @@
 import Foundation
 
 class FeedViewModel: FeedViewModelProtocol {
-
+    private var service: FeedServiceProtocol
+    var posts = [PostList]()
     
+    init(service: FeedServiceProtocol) {
+        self.service = service
+    }
+    
+    func getPosts(completion: () -> ()) {
+        self.service.getPosts { posts in
+            self.posts = posts
+        }
+    }
 }
 
 

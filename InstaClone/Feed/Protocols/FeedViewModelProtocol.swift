@@ -9,6 +9,9 @@ import Foundation
 import Firebase
 
 protocol FeedViewModelProtocol {
+    var posts:[PostList] { get set }
+    
+    func getPosts(completion: () -> ())
     func signOut()
 }
 

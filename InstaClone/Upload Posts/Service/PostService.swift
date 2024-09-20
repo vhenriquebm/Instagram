@@ -27,10 +27,4 @@ struct PostService: PostServiceProtocol {
             
         }
     }
-    
-    func getPosts() {
-        COLLECTION_POSTS.getDocuments { snapshot, error in
-            guard let data = snapshot?.documents else { return }
-        }
-    }
 }

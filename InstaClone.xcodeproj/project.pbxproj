@@ -17,6 +17,9 @@
 		420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609AD2BB31765007E5D5B /* FeedViewController.swift */; };
 		420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B02BB317C0007E5D5B /* NotificationsViewController.swift */; };
 		420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B32BB31804007E5D5B /* ProfileViewController.swift */; };
+		422E56A62C9E058600867FC3 /* FeedServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E56A52C9E058600867FC3 /* FeedServiceProtocol.swift */; };
+		422E56A92C9E070100867FC3 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E56A82C9E070100867FC3 /* FeedService.swift */; };
+		422E56AC2C9E07B300867FC3 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E56AB2C9E07B300867FC3 /* PostList.swift */; };
 		424313122BBCC87700BEE02C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313112BBCC87700BEE02C /* LoginCoordinator.swift */; };
 		424313152BBCC9AF00BEE02C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313142BBCC9AF00BEE02C /* Coordinator.swift */; };
 		424313172BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424313162BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift */; };
@@ -84,6 +87,9 @@
 		420609AD2BB31765007E5D5B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		420609B02BB317C0007E5D5B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		420609B32BB31804007E5D5B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		422E56A52C9E058600867FC3 /* FeedServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceProtocol.swift; sourceTree = "<group>"; };
+		422E56A82C9E070100867FC3 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		422E56AB2C9E07B300867FC3 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		424313112BBCC87700BEE02C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		424313142BBCC9AF00BEE02C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		424313162BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorProtocol.swift; sourceTree = "<group>"; };
@@ -200,6 +206,8 @@
 		420609A62BB31708007E5D5B /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				422E56AA2C9E079C00867FC3 /* Model */,
+				422E56A72C9E06F400867FC3 /* Service */,
 				424313182BBCCD6500BEE02C /* Coordinator */,
 				42A31A722BB5CB2A0074F8DB /* Protocols */,
 				42A31A712BB5CB160074F8DB /* View */,
@@ -258,6 +266,22 @@
 				420609A42BB30D4B007E5D5B /* MainTabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		422E56A72C9E06F400867FC3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				422E56A82C9E070100867FC3 /* FeedService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		422E56AA2C9E079C00867FC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				422E56AB2C9E07B300867FC3 /* PostList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		424313102BBCC86B00BEE02C /* Coordinator */ = {
@@ -437,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				42A31A732BB5CB390074F8DB /* FeedViewModelProtocol.swift */,
+				422E56A52C9E058600867FC3 /* FeedServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -811,10 +836,13 @@
 				42F5BF4D2C92060A00DBFFBD /* UploadPostViewController.swift in Sources */,
 				420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */,
 				42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */,
+				422E56AC2C9E07B300867FC3 /* PostList.swift in Sources */,
 				42BAC5E32BD715A100B80779 /* ProfileCoordinator.swift in Sources */,
 				42AA0E3F2BC759E9000C85A4 /* SearchView.swift in Sources */,
 				429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */,
+				422E56A92C9E070100867FC3 /* FeedService.swift in Sources */,
 				42F5BF5F2C92273E00DBFFBD /* PostService.swift in Sources */,
+				422E56A62C9E058600867FC3 /* FeedServiceProtocol.swift in Sources */,
 				42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */,
 				42F5BF642C9228B400DBFFBD /* PostServiceProtocol.swift in Sources */,
 				42AA0E392BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift in Sources */,
