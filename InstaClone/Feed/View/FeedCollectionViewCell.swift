@@ -10,6 +10,10 @@ import UIKit
 class FeedCollectionViewCell: UICollectionViewCell {
     static let identifier = "FeedCollectionViewCell"
     
+    var viewModel: FeedCollectionCellViewModel? {
+        didSet { configure() }
+    }
+    
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "venom-7")
@@ -29,7 +33,6 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     private lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "venom-7")
         imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -80,7 +83,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    
+    private lazy var captionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Some text to text the caption view"
+        return label
+    }()
     
     private lazy var ribbonButton: UIButton = {
         let button = UIButton(type: .system)
@@ -113,6 +123,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         self.bottomStackView.addSubview(shareButton)
         self.bottomStackView.addSubview(likesLabel)
         self.contentView.addSubview(ribbonButton)
+        self.contentView.addSubview(captionLabel)
         
         profileImageView.layer.cornerRadius = 40 / 2
         profileImageView.layer.masksToBounds = true
@@ -147,6 +158,16 @@ class FeedCollectionViewCell: UICollectionViewCell {
             likesLabel.topAnchor.constraint(equalTo: bottomStackView.bottomAnchor, constant: 10),
             likesLabel.leadingAnchor.constraint(equalTo: likeButton.leadingAnchor),
             likesLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            captionLabel.topAnchor.constraint(equalTo: likesLabel.bottomAnchor, constant: 5),
+            captionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5)
         ])
+    }
+    
+    private func configure() {
+        guard let viewModel = viewModel else { return }
+        
+        postImageView.sd_setImage(with: viewModel.imageUrl)
+        self.captionLabel.text = viewModel.caption
     }
 }

@@ -16,6 +16,7 @@ class FeedViewController: UICollectionViewController {
         super.viewDidLoad()
         configureUI()
         viewModel = FeedViewModel(service: FeedService())
+        getPosts()
     }
     
     private func configureUI() {
@@ -43,7 +44,7 @@ class FeedViewController: UICollectionViewController {
     
     private func getPosts() {
         viewModel?.getPosts {
-            collectionView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     
@@ -63,7 +64,7 @@ class FeedViewController: UICollectionViewController {
 
 extension FeedViewController {
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
         return viewModel?.posts.count ?? 0
     }
     
@@ -71,7 +72,9 @@ extension FeedViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.identifier, for: indexPath) as! FeedCollectionViewCell
         
-    
+        if let post = viewModel?.posts[indexPath.row] {
+            cell.viewModel = FeedCollectionCellViewModel(post: post)
+        }
         
         return cell
     }
@@ -82,6 +85,6 @@ extension FeedViewController {
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 420)
+        return CGSize(width: view.frame.width, height: 460)
     }
 }
