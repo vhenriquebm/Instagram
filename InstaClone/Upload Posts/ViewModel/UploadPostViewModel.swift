@@ -9,13 +9,20 @@ import UIKit
 
 class UploadPostViewModel: UploadPostViewModelProtocol {
     private var service: PostServiceProtocol
+    var user: User?
     
-    init(service: PostServiceProtocol) {
+    init(service: PostServiceProtocol, user: User?) {
         self.service = service
+        self.user = user
+    }
+    
+    var getUser: User? {
+        return self.user
     }
     
     func upload(post: Post, completion: @escaping FirestoreCompletion) {
-        service.upload(post: post, completion: completion)        
+        guard let user = self.getUser else { return }
+        service.upload(post: post, user: user, completion: completion)
     }
     
     func checkMaxLength(_ textView: UITextView) {

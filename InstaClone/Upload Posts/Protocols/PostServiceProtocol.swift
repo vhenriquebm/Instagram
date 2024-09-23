@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PostServiceProtocol {
-    func upload(post: Post, completion: @escaping(FirestoreCompletion))
+    func upload(post: Post, user: User, completion: @escaping (FirestoreCompletion))
 }

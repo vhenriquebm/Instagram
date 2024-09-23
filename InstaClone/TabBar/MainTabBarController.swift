@@ -83,7 +83,7 @@ class MainTabBarController: UITabBarController {
                 guard let selectedImage = items.singlePhoto?.image else { return }
                 
                 let controller = UploadPostViewController()
-                let viewModel = UploadPostViewModel(service: PostService())
+                let viewModel = UploadPostViewModel(service: PostService(), user: self.user)
                 
                 controller.selectedImage = selectedImage
                 controller.viewModel = viewModel

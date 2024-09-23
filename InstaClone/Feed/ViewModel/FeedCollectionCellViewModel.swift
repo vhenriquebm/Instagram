@@ -14,12 +14,20 @@ struct FeedCollectionCellViewModel {
         self.post = post
     }
     
+    var ownerImageUrl: URL? {
+        return URL(string: post.ownerImageUrl)
+    }
+    
+    var ownerUserName: String {
+        return post.ownerUserName
+    }
+    
     var imageUrl: URL? {
         return URL(string: post.imageUrl)
     }
     
-    var likes: Int {
-        return post.likes
+    var likes: String {
+        post.likes == 1 ? "\(post.likes) like" : "\(post.likes) likes"
     }
     
     var caption: String {

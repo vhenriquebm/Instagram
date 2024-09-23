@@ -10,4 +10,6 @@ import UIKit
 protocol UploadPostViewModelProtocol {
     func checkMaxLength(_ textView: UITextView)
     func upload(post: Post, completion: @escaping FirestoreCompletion)
+    
+    var getUser: User? { get }
 }

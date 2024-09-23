@@ -16,15 +16,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "venom-7")
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .lightGray
         return imageView
     }()
     
     private lazy var userNameButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Venom", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
@@ -37,7 +36,6 @@ class FeedCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     
     private lazy var bottomStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, shareButton])
@@ -76,7 +74,6 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     private lazy var likesLabel: UILabel = {
         let label = UILabel()
-        label.text = "1 like"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -167,7 +164,11 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func configure() {
         guard let viewModel = viewModel else { return }
         
+        profileImageView.sd_setImage(with: viewModel.ownerImageUrl)
+        userNameButton.setTitle(viewModel.ownerUserName, for: .normal)
+
         postImageView.sd_setImage(with: viewModel.imageUrl)
         self.captionLabel.text = viewModel.caption
+        self.likesLabel.text = viewModel.likes
     }
 }
