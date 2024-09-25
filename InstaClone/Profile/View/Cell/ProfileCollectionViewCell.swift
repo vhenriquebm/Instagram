@@ -10,6 +10,10 @@ import UIKit
 class ProfileCollectionViewCell: UICollectionViewCell {
     static let identifier = "ProfileCollectionViewCell"
     
+    var viewModel: ProfileCollectionViewCellViewModel? {
+        didSet { configureUI() }
+    }
+    
     private lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .venom7
@@ -39,5 +43,9 @@ class ProfileCollectionViewCell: UICollectionViewCell {
             postImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             postImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
+    }
+    
+    private func configureUI() {
+        self.postImageView.sd_setImage(with: viewModel?.getImage)        
     }
 }

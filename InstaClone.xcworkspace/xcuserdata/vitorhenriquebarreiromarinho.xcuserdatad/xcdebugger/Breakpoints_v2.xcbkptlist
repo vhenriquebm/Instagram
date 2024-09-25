@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91C5B375-FE26-40FD-896B-C5BF948847A6"
+            uuid = "DCF0016E-5B39-4F77-A48E-B37CF666516D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaClone/Feed/ViewModel/FeedViewModel.swift"
+            filePath = "InstaClone/Profile/Service/ProfileService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "getPosts(completion:)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "getPosts(with:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

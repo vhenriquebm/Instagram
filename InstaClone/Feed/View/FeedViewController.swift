@@ -11,6 +11,7 @@ import Firebase
 
 class FeedViewController: UICollectionViewController {
     private var viewModel: FeedViewModelProtocol?
+    private let refreshController = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,17 @@ class FeedViewController: UICollectionViewController {
         
         navigationItem.title = "Feed"
         
+        refreshController.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.refreshControl = refreshController
+        
+    }
+    
+    @objc func refresh() {
+        self.viewModel?.posts.removeAll()
+        self.collectionView.refreshControl?.endRefreshing()
+        self.viewModel?.getPosts {
+            self.collectionView.reloadData()
+        }
     }
     
     private func configureNavigationBar() {
@@ -85,6 +97,6 @@ extension FeedViewController {
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 460)
+        return CGSize(width: view.frame.width, height: view.frame.width + 160)
     }
 }

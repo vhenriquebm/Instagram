@@ -218,7 +218,7 @@ class ProfileHeader: UICollectionReusableView {
         
         editProfileButton.backgroundColor = viewModel.followButtonBackGroundColor
         
-        postLabel.attributedText = viewModel.posts
+        postLabel.attributedText = viewModel.postsCount
         followersLabel.attributedText = viewModel.followers
         followingLabel.attributedText = viewModel.following
     }

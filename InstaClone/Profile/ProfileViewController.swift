@@ -20,6 +20,7 @@ class ProfileViewController: UICollectionViewController {
         getUser()
         checkIfUserIsFollowed()
         getUserStats()
+        getPosts()
     }
     
     func configureView() {
@@ -36,6 +37,13 @@ class ProfileViewController: UICollectionViewController {
     private func getUser() {
         self.user = viewModel?.getUser
         self.navigationItem.title = user?.username
+    }
+    
+    private func getPosts() {
+        guard let uuid = user?.uid else { return }
+        viewModel?.getPosts(uuid: uuid, completion: {
+            self.collectionView.reloadData()
+        })
     }
     
     private func checkIfUserIsFollowed() {
@@ -66,12 +74,16 @@ class ProfileViewController: UICollectionViewController {
 extension ProfileViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.posts.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: profileIdentifier, for: indexPath) as! ProfileCollectionViewCell
+        
+        if let post = viewModel?.posts[indexPath.row] {
+            cell.viewModel = ProfileCollectionViewCellViewModel(post: post)
+        }
         
         return cell
     }
@@ -82,7 +94,7 @@ extension ProfileViewController {
         header.delegate = self
         
         if let user = user {
-            header.viewModel = ProfileHeaderViewModel(user: user)
+            header.viewModel = ProfileHeaderViewModel(user: user, posts: viewModel?.posts.count ?? 0)
         }
         
         return header

@@ -73,6 +73,7 @@
 		42F5BF622C92284500DBFFBD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF612C92284500DBFFBD /* Post.swift */; };
 		42F5BF642C9228B400DBFFBD /* PostServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF632C9228B400DBFFBD /* PostServiceProtocol.swift */; };
 		42F5BF662C9230DF00DBFFBD /* UploadPostDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F5BF652C9230DF00DBFFBD /* UploadPostDelegate.swift */; };
+		42FE623C2CA489DE009901D6 /* ProfileCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE623B2CA489DE009901D6 /* ProfileCollectionViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 		42F5BF612C92284500DBFFBD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		42F5BF632C9228B400DBFFBD /* PostServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceProtocol.swift; sourceTree = "<group>"; };
 		42F5BF652C9230DF00DBFFBD /* UploadPostDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostDelegate.swift; sourceTree = "<group>"; };
+		42FE623B2CA489DE009901D6 /* ProfileCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		ED0E8F88EAD34666D3054EEB /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98E8A5877794A852CCCA0FC /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -526,6 +528,7 @@
 			children = (
 				42A776592BB72250007CA1E4 /* ProfileHeaderViewModel.swift */,
 				42A7765E2BB7274F007CA1E4 /* ProfileViewModel.swift */,
+				42FE623B2CA489DE009901D6 /* ProfileCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				42A7765A2BB72250007CA1E4 /* ProfileHeaderViewModel.swift in Sources */,
 				42A7764E2BB719F7007CA1E4 /* Constants.swift in Sources */,
 				42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */,
+				42FE623C2CA489DE009901D6 /* ProfileCollectionViewCellViewModel.swift in Sources */,
 				42A31A6D2BB4AD800074F8DB /* RegistrationService.swift in Sources */,
 				424D0BF52BB4548B00E4EA0E /* LoginViewModel.swift in Sources */,
 				42A7765F2BB7274F007CA1E4 /* ProfileViewModel.swift in Sources */,

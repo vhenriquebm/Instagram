@@ -9,9 +9,12 @@ import UIKit
 
 class ProfileHeaderViewModel: ProfileHeaderViewModelProtocol {
     private var user: User
+    private var posts: Int
     
-    init(user: User) {
+    
+    init(user: User, posts: Int) {
         self.user = user
+        self.posts = posts
     }
     
     var getUser: User {
@@ -54,8 +57,8 @@ class ProfileHeaderViewModel: ProfileHeaderViewModelProtocol {
         return attributedStatText(value: user.userStats.following , label: "following")
     }
     
-    var posts: NSAttributedString {
-        return attributedStatText(value: 5, label: "posts")
+    var postsCount: NSAttributedString {
+        return attributedStatText(value: self.posts, label: "posts")
     }
     
     func attributedStatText(value: Int, label: String) -> NSAttributedString {

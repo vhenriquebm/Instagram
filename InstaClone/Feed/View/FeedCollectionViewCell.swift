@@ -143,7 +143,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
             postImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             postImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             postImageView.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10),
-            postImageView.heightAnchor.constraint(equalToConstant: 300),
+            postImageView.heightAnchor.constraint(equalToConstant: contentView.frame.width),
             
             bottomStackView.topAnchor.constraint(equalTo: postImageView.bottomAnchor,constant: 10),
             

@@ -10,7 +10,7 @@ import Foundation
 class FeedService: FeedServiceProtocol {
     
     func getPosts(completion: @escaping ([PostList])->()) {
-        COLLECTION_POSTS.getDocuments { snapshot, error in
+        COLLECTION_POSTS.order(by: "timestamp", descending: true).getDocuments { snapshot, error in
             guard let documents = snapshot?.documents else { return }
             
             let posts = documents.map { PostList(postId: $0.documentID,

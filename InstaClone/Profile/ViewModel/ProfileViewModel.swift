@@ -10,6 +10,7 @@ import Foundation
 class ProfileViewModel: ProfileViewModelProtocol {
     private var user: User
     private var service: ProfileService
+    var posts = [PostList]()
     
     required init(user: User) {
         self.user = user
@@ -36,5 +37,12 @@ class ProfileViewModel: ProfileViewModelProtocol {
     
     func getUserStats(uid: String, completion: @escaping UserStatsCompletion) {
         service.getUserStats(uid: uid, completion: completion)
+    }
+    
+    func getPosts(uuid: String, completion: @escaping () -> ()) {
+        service.getPosts(with: uuid) { posts in
+            self.posts = posts
+            completion()
+        }
     }
 }
