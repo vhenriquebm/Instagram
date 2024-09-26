@@ -97,13 +97,16 @@ extension ProfileService {
     func getPosts(with uuid: String, completion: @escaping ([PostList]) -> ()) {
         let query = COLLECTION_POSTS
             .whereField("ownerUid", isEqualTo: uuid)
-           // .order(by: "timestamp", descending: true)
 
         query.getDocuments { snapshot, error in
             
             guard let documents = snapshot?.documents else { return }
             
-            let posts = documents.map { PostList(postId: $0.documentID, dictionary: $0.data())}
+            var posts = documents.map { PostList(postId: $0.documentID, dictionary: $0.data())}
+            
+            posts.sort { (post1, post2) -> Bool in
+                return post1.timestamp.seconds > post2.timestamp.seconds
+            }
             
             completion(posts)
         }
