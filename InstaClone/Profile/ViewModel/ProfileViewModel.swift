@@ -15,8 +15,6 @@ class ProfileViewModel: ProfileViewModelProtocol {
     required init(user: User) {
         self.user = user
         self.service = ProfileService()
-        
-        print ("DEBUG - USER - \(user)")
     }
     
     var getUser: User {

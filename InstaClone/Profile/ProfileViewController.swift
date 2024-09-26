@@ -89,12 +89,10 @@ extension ProfileViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = FeedViewController(collectionViewLayout: UICollectionViewLayout())
-        let feedViewModel = FeedViewModel(service: FeedService())
-        feedViewModel.post = viewModel?.posts[indexPath.row]
+        let controller = FeedViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let feedViewModel = FeedViewModel(service: FeedService(), 
+                                          post: viewModel?.posts[indexPath.row])
         
-        
-        print ("DEBUG - O POST E \(viewModel?.posts[indexPath.row])")
         controller.viewModel = feedViewModel
         navigationController?.pushViewController(controller, animated: true)
     }

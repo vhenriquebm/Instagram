@@ -7,97 +7,97 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F7180078-53BB-4AFC-8F0F-167C4A24D7B9"
+            uuid = "8B2B6133-8B58-4EA4-AB26-BAC82A4644EC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaClone/Feed/View/FeedViewController.swift"
+            filePath = "InstaClone/Feed/View/FeedCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "configure()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E083048C-1620-4C23-8D0E-A85019CC3305"
+            uuid = "25EC02B1-E8B0-43A6-A6C8-DAE07943A16A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaClone/Feed/View/FeedViewController.swift"
+            filePath = "InstaClone/Feed/View/FeedCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "configure()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8170401C-A9B5-42AA-9F28-5FB179E8595D"
+            uuid = "F1F55A0D-ECF3-4A61-8336-1153875DC5C7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaClone/Feed/View/FeedViewController.swift"
+            filePath = "InstaClone/Feed/View/FeedCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "configure()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "52462B18-59B7-446E-B4EB-2C6ECEFEE813"
+            uuid = "256EB16B-C473-4C2E-86A8-D0CE34B402C6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaClone/Feed/View/FeedViewController.swift"
+            filePath = "InstaClone/Feed/View/FeedCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "FeedViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0FAE70E5-0589-4A08-A15E-35DF1893597A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "InstaClone/Login/View/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "login()"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "configure()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "61AF0E8F-17BA-4A28-912C-438030CBB5A1"
+            uuid = "5245E9B1-F0EE-4F79-A6E7-4D929E22439A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaClone/Login/View/LoginViewController.swift"
+            filePath = "InstaClone/Feed/View/FeedCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "login()"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "configure()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD2EECD4-5FEC-4E1C-8DAF-72B065245F40"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaClone/Feed/View/FeedCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "viewModel"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

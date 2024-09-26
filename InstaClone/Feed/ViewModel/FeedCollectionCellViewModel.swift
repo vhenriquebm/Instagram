@@ -12,6 +12,8 @@ struct FeedCollectionCellViewModel {
     
     init(post: PostList) {
         self.post = post
+        
+        print ("DEBUG - NA CELULA O POST E \(post)")
     }
     
     var ownerImageUrl: URL? {

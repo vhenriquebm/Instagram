@@ -12,8 +12,9 @@ class FeedViewModel: FeedViewModelProtocol {
     var postList = [PostList]()
     var post: PostList?
     
-    init(service: FeedServiceProtocol) {
+    init(service: FeedServiceProtocol, post: PostList? = nil ) {
         self.service = service
+        self.post = post
     }
     
     func getPosts(completion: @escaping () -> ()) {
@@ -22,7 +23,6 @@ class FeedViewModel: FeedViewModelProtocol {
         self.service.getPosts { posts in
             self.postList = posts
             completion()
-            print ("The posts are \(posts)")
         }
     }
 }

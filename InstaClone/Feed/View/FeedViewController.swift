@@ -16,7 +16,6 @@ class FeedViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        viewModel = FeedViewModel(service: FeedService())
         getPosts()
     }
     
@@ -46,12 +45,22 @@ class FeedViewController: UICollectionViewController {
     
     private func configureNavigationBar() {
         
-        let navigationButton = UIBarButtonItem(title: "Logout",
-                                               style: .plain,
-                                               target: self,
-                                               action: #selector(signOut))
-        
-        navigationItem.leftBarButtonItem = navigationButton
+        if (viewModel?.post) != nil {
+            let navigationButton = UIBarButtonItem(title: "Back",
+                                                   style: .plain,
+                                                   target: self,
+                                                   action: #selector(back))
+            navigationItem.leftBarButtonItem = navigationButton
+            
+        } else {
+            let navigationButton = UIBarButtonItem(title: "Logout",
+                                                   style: .plain,
+                                                   target: self,
+                                                   action: #selector(signOut))
+            
+            navigationItem.leftBarButtonItem = navigationButton
+            
+        }
     }
     
     private func getPosts() {
@@ -70,14 +79,18 @@ class FeedViewController: UICollectionViewController {
         viewModel?.signOut()
         goToLogin()
     }
+    
+    @objc private func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 //MARK: - UICollectionViewDataSource
 
 extension FeedViewController {
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
-        return viewModel?.post != nil ? 1 : viewModel?.postList.count ?? 0
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.post == nil ? viewModel?.postList.count ?? 0 : 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

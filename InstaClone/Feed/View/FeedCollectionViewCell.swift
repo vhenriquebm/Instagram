@@ -85,7 +85,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Some text to text the caption view"
+        label.numberOfLines = 0
         return label
     }()
     
@@ -147,17 +147,19 @@ class FeedCollectionViewCell: UICollectionViewCell {
             
             bottomStackView.topAnchor.constraint(equalTo: postImageView.bottomAnchor,constant: 10),
             
-            bottomStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            bottomStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             
             ribbonButton.topAnchor.constraint(equalTo: postImageView.bottomAnchor,constant: 5),
-            ribbonButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            ribbonButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             
             likesLabel.topAnchor.constraint(equalTo: bottomStackView.bottomAnchor, constant: 10),
-            likesLabel.leadingAnchor.constraint(equalTo: likeButton.leadingAnchor),
-            likesLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            likesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            likesLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
             
             captionLabel.topAnchor.constraint(equalTo: likesLabel.bottomAnchor, constant: 5),
-            captionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5)
+            captionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            captionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10)
+
         ])
     }
     

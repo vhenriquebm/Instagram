@@ -32,9 +32,12 @@ class MainTabBarController: UITabBarController {
         
         let layout = UICollectionViewFlowLayout()
         
+        let feedContoller = FeedViewController(collectionViewLayout: layout)
+        feedContoller.viewModel = FeedViewModel(service: FeedService())
+    
         let feed = createController(unselectedImage: .homeUnselected,
                                     selectedImage: .homeSelected,
-                                    rootViewController: FeedViewController(collectionViewLayout: layout))
+                                    rootViewController: feedContoller)
         
         let search = createController(unselectedImage: .searchSelected,
                                       selectedImage: .searchUnselected,
