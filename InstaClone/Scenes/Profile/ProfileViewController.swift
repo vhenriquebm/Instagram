@@ -64,9 +64,6 @@ class ProfileViewController: UICollectionViewController {
         viewModel?.getUserStats(uid: uid, completion: { stats in
             self.user?.userStats = stats
             self.collectionView.reloadData()
-            
-            print ("DEBUG - STATS - \(stats)")
-
         })
     }
 }

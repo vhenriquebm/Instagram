@@ -10,6 +10,8 @@ import UIKit
 class FeedCollectionViewCell: UICollectionViewCell {
     static let identifier = "FeedCollectionViewCell"
     
+    weak var delegate: FeedCellDelegate?
+    
     var viewModel: FeedCollectionCellViewModel? {
         didSet { configure() }
     }
@@ -60,6 +62,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.addTarget(self, action: #selector(didTapComments), for: .touchUpInside)
         return button
     }()
     
@@ -172,5 +175,10 @@ class FeedCollectionViewCell: UICollectionViewCell {
         postImageView.sd_setImage(with: viewModel.imageUrl)
         self.captionLabel.text = viewModel.caption
         self.likesLabel.text = viewModel.likes
+    }
+    
+    @objc private func didTapComments() {
+        guard let post = viewModel?.post else { return }
+        delegate?.cell(self, wantsToShowCommentsFor: post)
     }
 }

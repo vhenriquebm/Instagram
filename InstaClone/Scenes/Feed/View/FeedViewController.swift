@@ -103,6 +103,7 @@ extension FeedViewController {
         } else {
             guard let postList = viewModel?.postList[indexPath.row] else { return UICollectionViewCell() }
             
+            cell.delegate = self
             cell.viewModel = FeedCollectionCellViewModel(post: postList)
         }
         
@@ -116,5 +117,15 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.width + 160)
+    }
+}
+
+//MARK: - FeedCellDelegate
+
+extension FeedViewController: FeedCellDelegate {
+    
+    func cell(_ cell: FeedCollectionViewCell, wantsToShowCommentsFor post: PostList) {
+        let controller = CommentViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

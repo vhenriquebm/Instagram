@@ -8,7 +8,7 @@
 import Foundation
 
 struct FeedCollectionCellViewModel {
-    private let post: PostList
+    let post: PostList
     
     init(post: PostList) {
         self.post = post
