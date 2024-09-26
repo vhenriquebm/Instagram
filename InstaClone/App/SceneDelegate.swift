@@ -58,15 +58,19 @@ extension SceneDelegate {
         let navigation = UINavigationController()
         window = UIWindow(windowScene: scene)
         
-        if UserSession.shared.isUserAuthenticated() {
-            let coordinator = MainCoordinator(navigation: navigation, window: window)
-            coordinator.start()
-        } else {
-            let coordinator =  LoginCoordinator(navigation: navigation, window: window)
-            coordinator.start()
+        _ = Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                let coordinator = MainCoordinator(navigation: navigation, window: self.window)
+                coordinator.start()
+            } else {
+                let coordinator = LoginCoordinator(navigation: navigation, window: self.window)
+                coordinator.start()
+            }
         }
     }
 }
+
+
 
 
 

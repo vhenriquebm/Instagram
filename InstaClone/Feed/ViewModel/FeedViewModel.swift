@@ -9,15 +9,18 @@ import Foundation
 
 class FeedViewModel: FeedViewModelProtocol {
     private var service: FeedServiceProtocol
-    var posts = [PostList]()
+    var postList = [PostList]()
+    var post: PostList?
     
     init(service: FeedServiceProtocol) {
         self.service = service
     }
     
     func getPosts(completion: @escaping () -> ()) {
+        guard post == nil else { return }
+        
         self.service.getPosts { posts in
-            self.posts = posts
+            self.postList = posts
             completion()
             print ("The posts are \(posts)")
         }

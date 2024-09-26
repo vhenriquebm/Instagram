@@ -10,7 +10,7 @@ import Firebase
 
 
 class FeedViewController: UICollectionViewController {
-    private var viewModel: FeedViewModelProtocol?
+    var viewModel: FeedViewModelProtocol?
     private let refreshController = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class FeedViewController: UICollectionViewController {
     }
     
     @objc func refresh() {
-        self.viewModel?.posts.removeAll()
+        self.viewModel?.postList.removeAll()
         self.collectionView.refreshControl?.endRefreshing()
         self.viewModel?.getPosts {
             self.collectionView.reloadData()
@@ -77,15 +77,20 @@ class FeedViewController: UICollectionViewController {
 extension FeedViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {        
-        return viewModel?.posts.count ?? 0
+        return viewModel?.post != nil ? 1 : viewModel?.postList.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedCollectionViewCell.identifier, for: indexPath) as! FeedCollectionViewCell
         
-        if let post = viewModel?.posts[indexPath.row] {
+        if let post = viewModel?.post {
             cell.viewModel = FeedCollectionCellViewModel(post: post)
+            return cell
+        } else {
+            guard let postList = viewModel?.postList[indexPath.row] else { return UICollectionViewCell() }
+            
+            cell.viewModel = FeedCollectionCellViewModel(post: postList)
         }
         
         return cell

@@ -88,6 +88,17 @@ extension ProfileViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = FeedViewController(collectionViewLayout: UICollectionViewLayout())
+        let feedViewModel = FeedViewModel(service: FeedService())
+        feedViewModel.post = viewModel?.posts[indexPath.row]
+        
+        
+        print ("DEBUG - O POST E \(viewModel?.posts[indexPath.row])")
+        controller.viewModel = feedViewModel
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIndentifier, for: indexPath) as! ProfileHeader
         

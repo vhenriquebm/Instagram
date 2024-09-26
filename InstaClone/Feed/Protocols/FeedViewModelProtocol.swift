@@ -9,7 +9,8 @@ import Foundation
 import Firebase
 
 protocol FeedViewModelProtocol {
-    var posts:[PostList] { get set }
+    var postList:[PostList] { get set }
+    var post: PostList? { get }
     
     func getPosts(completion: @escaping () -> ())
     func signOut()
