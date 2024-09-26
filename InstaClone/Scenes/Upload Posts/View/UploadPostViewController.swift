@@ -29,6 +29,7 @@ class UploadPostViewController: UIViewController {
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.delegate = self
+        textView.placeholderShouldCenter = false
         return textView
     }()
     

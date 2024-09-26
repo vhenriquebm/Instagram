@@ -9,7 +9,7 @@ import UIKit
 
 class InputTextView: UITextView {
     
-    private let placeholderLabel: UILabel = {
+    let placeholderLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -18,6 +18,32 @@ class InputTextView: UITextView {
     
     var placeholderText: String? {
         didSet { placeholderLabel.text = placeholderText }
+    }
+    
+    var placeholderShouldCenter = true {
+        didSet {
+            if placeholderShouldCenter {
+                configurePlaceHolderConstraints(placeholderShouldCenter: true)
+            } else {
+                configurePlaceHolderConstraints(placeholderShouldCenter: false)
+            }
+        }
+    }
+    
+    func configurePlaceHolderConstraints(placeholderShouldCenter: Bool) {
+        
+        if placeholderShouldCenter {
+            NSLayoutConstraint.activate([
+                placeholderLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+                placeholderLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 8),
+                placeholderLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+                placeholderLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8)
+            ])
+        }
     }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
