@@ -25,6 +25,20 @@ class FeedViewModel: FeedViewModelProtocol {
             completion()
         }
     }
+    
+    func like(completion: @escaping (Bool) -> ()) {
+        guard let post = self.post,
+              let didLike = post.didLike else { return }
+        
+        if didLike {
+            
+        } else {
+            self.service.like(post: post) { error in
+                guard error == nil else { return }
+                completion(true)
+            }
+        }
+    }
 }
 
 

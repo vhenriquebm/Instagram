@@ -53,6 +53,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         return button
     }()
     
@@ -180,5 +181,20 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @objc private func didTapComments() {
         guard let post = viewModel?.post else { return }
         delegate?.cell(self, wantsToShowCommentsFor: post)
+    }
+    
+    @objc private func didTapLike() {
+        guard let post = viewModel?.post else { return }
+        delegate?.cell(self, didLike: post)
+    }
+    
+    func setupLikeButton(like: Bool) {
+        if like {
+            likeButton.setImage(.likeSelected, for: .normal)
+            likeButton.setTitleColor(.red, for: .normal)
+        } else {
+            likeButton.setImage(.likeUnselected, for: .normal)
+            likeButton.setTitleColor(.black, for: .normal)
+        }
     }
 }

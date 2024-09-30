@@ -123,11 +123,17 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - FeedCellDelegate
 
 extension FeedViewController: FeedCellDelegate {
+
+    func cell(_ cell: FeedCollectionViewCell, didLike post: PostList) {
+        self.viewModel?.post?.didLike?.toggle()
+        
+        viewModel?.like { like in
+            cell.setupLikeButton(like: like)
+        }
+    }
     
     func cell(_ cell: FeedCollectionViewCell, wantsToShowCommentsFor post: PostList) {
-        
-        let controller = CommentViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        
+                
         guard let tabBar = self.tabBarController as? MainTabBarController,
               let user = tabBar.user, 
               let navigation = self.navigationController else { return }
@@ -136,6 +142,5 @@ extension FeedViewController: FeedCellDelegate {
                                              post: post, user: user)
         
         coordinator.start()
-        
     }
 }
