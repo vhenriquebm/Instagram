@@ -31,7 +31,12 @@
 		424D0BFC2BB45A3300E4EA0E /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */; };
 		424D0BFF2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D0BFE2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift */; };
 		424D0C012BB4764000E4EA0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */; };
+		4251EC652CA5EDF200829D84 /* CommentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251EC642CA5EDF200829D84 /* CommentCellViewModel.swift */; };
 		425331732C8E4E9C0060D28D /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425331722C8E4E9C0060D28D /* UIImage+.swift */; };
+		42681D262CAB28CA006307E0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42681D252CAB28CA006307E0 /* UserService.swift */; };
+		42681D2B2CAB2A6D006307E0 /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42681D2A2CAB2A6D006307E0 /* UserServiceProtocol.swift */; };
+		42681D2E2CAB2D63006307E0 /* CommentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42681D2D2CAB2D63006307E0 /* CommentCoordinator.swift */; };
+		42681D302CAB2F95006307E0 /* CommentCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42681D2F2CAB2F95006307E0 /* CommentCoordinatorProtocol.swift */; };
 		4281F3602BC8A50500A45350 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4281F35F2BC8A50500A45350 /* SearchViewModel.swift */; };
 		4281F3632BC8A52300A45350 /* SearchViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4281F3622BC8A52300A45350 /* SearchViewModelProtocol.swift */; };
 		4283FFA42BB440E900711D0C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283FFA32BB440E900711D0C /* UIView+.swift */; };
@@ -80,6 +85,10 @@
 		42FE62492CA5C689009901D6 /* CommentInputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE62482CA5C689009901D6 /* CommentInputAccesoryView.swift */; };
 		42FE624D2CA5DF71009901D6 /* CommentInputAccesoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE624C2CA5DF71009901D6 /* CommentInputAccesoryViewDelegate.swift */; };
 		42FE62502CA5E2A9009901D6 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE624F2CA5E2A9009901D6 /* CommentService.swift */; };
+		42FE62532CA5E4BF009901D6 /* CommentServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE62522CA5E4BF009901D6 /* CommentServiceProtocol.swift */; };
+		42FE62562CA5E4EA009901D6 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE62552CA5E4EA009901D6 /* CommentViewModel.swift */; };
+		42FE62582CA5E53F009901D6 /* CommentViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE62572CA5E53F009901D6 /* CommentViewModelProtocol.swift */; };
+		42FE625B2CA5EA21009901D6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE625A2CA5EA21009901D6 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,7 +118,12 @@
 		424D0BFB2BB45A3300E4EA0E /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		424D0BFE2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModelProtocol.swift; sourceTree = "<group>"; };
 		424D0C002BB4764000E4EA0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4251EC642CA5EDF200829D84 /* CommentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellViewModel.swift; sourceTree = "<group>"; };
 		425331722C8E4E9C0060D28D /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		42681D252CAB28CA006307E0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		42681D2A2CAB2A6D006307E0 /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		42681D2D2CAB2D63006307E0 /* CommentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCoordinator.swift; sourceTree = "<group>"; };
+		42681D2F2CAB2F95006307E0 /* CommentCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		4281F35F2BC8A50500A45350 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		4281F3622BC8A52300A45350 /* SearchViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelProtocol.swift; sourceTree = "<group>"; };
 		4283FFA32BB440E900711D0C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -158,6 +172,10 @@
 		42FE62482CA5C689009901D6 /* CommentInputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccesoryView.swift; sourceTree = "<group>"; };
 		42FE624C2CA5DF71009901D6 /* CommentInputAccesoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccesoryViewDelegate.swift; sourceTree = "<group>"; };
 		42FE624F2CA5E2A9009901D6 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		42FE62522CA5E4BF009901D6 /* CommentServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentServiceProtocol.swift; sourceTree = "<group>"; };
+		42FE62552CA5E4EA009901D6 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		42FE62572CA5E53F009901D6 /* CommentViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModelProtocol.swift; sourceTree = "<group>"; };
+		42FE625A2CA5EA21009901D6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		ED0E8F88EAD34666D3054EEB /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98E8A5877794A852CCCA0FC /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +215,7 @@
 			children = (
 				42F5BF502C920D0700DBFFBD /* Localizable */,
 				42AA0E302BC4AF27000C85A4 /* App */,
+				42681D272CAB2A14006307E0 /* User */,
 				424313132BBCC9A600BEE02C /* Coordinator */,
 				42FE623F2CA59A3A009901D6 /* Scenes */,
 				429435832BB3A63200AB5121 /* Utils */,
@@ -372,6 +391,39 @@
 				424D0BFE2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		42681D272CAB2A14006307E0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				42681D292CAB2A54006307E0 /* Protocols */,
+				42681D282CAB2A45006307E0 /* Service */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		42681D282CAB2A45006307E0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				42681D252CAB28CA006307E0 /* UserService.swift */,
+				42681D2A2CAB2A6D006307E0 /* UserServiceProtocol.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		42681D292CAB2A54006307E0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		42681D2C2CAB2D56006307E0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				42681D2D2CAB2D63006307E0 /* CommentCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		4281F35E2BC8A4F500A45350 /* ViewModel */ = {
@@ -679,6 +731,10 @@
 		42FE623E2CA59A1E009901D6 /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				42681D2C2CAB2D56006307E0 /* Coordinator */,
+				42FE62592CA5EA19009901D6 /* Model */,
+				42FE62542CA5E4DF009901D6 /* ViewModel */,
+				42FE62512CA5E4AE009901D6 /* Protocols */,
 				42FE624E2CA5E29B009901D6 /* Service */,
 				42FE62422CA59B59009901D6 /* View */,
 			);
@@ -742,6 +798,33 @@
 				42FE624F2CA5E2A9009901D6 /* CommentService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		42FE62512CA5E4AE009901D6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				42FE62522CA5E4BF009901D6 /* CommentServiceProtocol.swift */,
+				42FE62572CA5E53F009901D6 /* CommentViewModelProtocol.swift */,
+				42681D2F2CAB2F95006307E0 /* CommentCoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		42FE62542CA5E4DF009901D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				42FE62552CA5E4EA009901D6 /* CommentViewModel.swift */,
+				4251EC642CA5EDF200829D84 /* CommentCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		42FE62592CA5EA19009901D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42FE625A2CA5EA21009901D6 /* Comment.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BCE5C3266FC9E902EEF26DA5 /* Pods */ = {
@@ -879,6 +962,7 @@
 			files = (
 				42A31A742BB5CB390074F8DB /* FeedViewModelProtocol.swift in Sources */,
 				42A31A6B2BB4ABB80074F8DB /* UserRegistration.swift in Sources */,
+				42681D302CAB2F95006307E0 /* CommentCoordinatorProtocol.swift in Sources */,
 				424313122BBCC87700BEE02C /* LoginCoordinator.swift in Sources */,
 				42A776612BB72765007CA1E4 /* ProfileViewModelProtocol.swift in Sources */,
 				4243131A2BBCCD7800BEE02C /* FeedCoordinator.swift in Sources */,
@@ -891,6 +975,7 @@
 				42AA0E3D2BC75899000C85A4 /* UserTableViewCell.swift in Sources */,
 				4283FFA42BB440E900711D0C /* UIView+.swift in Sources */,
 				424313152BBCC9AF00BEE02C /* Coordinator.swift in Sources */,
+				42681D262CAB28CA006307E0 /* UserService.swift in Sources */,
 				4243131D2BBCCDF400BEE02C /* MainCoordinator.swift in Sources */,
 				420609912BB30D2C007E5D5B /* AppDelegate.swift in Sources */,
 				42A7765D2BB7228D007CA1E4 /* ProfileHeaderViewModelProtocol.swift in Sources */,
@@ -899,6 +984,7 @@
 				42A31A6F2BB5CB040074F8DB /* FeedViewModel.swift in Sources */,
 				42A776572BB71C3E007CA1E4 /* User.swift in Sources */,
 				424313172BBCCBB200BEE02C /* LoginCoordinatorProtocol.swift in Sources */,
+				42FE62532CA5E4BF009901D6 /* CommentServiceProtocol.swift in Sources */,
 				422E56AE2C9EE8DD00867FC3 /* FeedCollectionCellViewModel.swift in Sources */,
 				420609A52BB30D4B007E5D5B /* MainTabBarController.swift in Sources */,
 				420609932BB30D2C007E5D5B /* SceneDelegate.swift in Sources */,
@@ -909,8 +995,11 @@
 				42A7765A2BB72250007CA1E4 /* ProfileHeaderViewModel.swift in Sources */,
 				42A7764E2BB719F7007CA1E4 /* Constants.swift in Sources */,
 				42BB1A9A2BB35226007F3865 /* FeedCollectionViewCell.swift in Sources */,
+				4251EC652CA5EDF200829D84 /* CommentCellViewModel.swift in Sources */,
+				42681D2B2CAB2A6D006307E0 /* UserServiceProtocol.swift in Sources */,
 				42FE623C2CA489DE009901D6 /* ProfileCollectionViewCellViewModel.swift in Sources */,
 				42A31A6D2BB4AD800074F8DB /* RegistrationService.swift in Sources */,
+				42681D2E2CAB2D63006307E0 /* CommentCoordinator.swift in Sources */,
 				424D0BF52BB4548B00E4EA0E /* LoginViewModel.swift in Sources */,
 				42A7765F2BB7274F007CA1E4 /* ProfileViewModel.swift in Sources */,
 				42FE62412CA59A95009901D6 /* CommentViewController.swift in Sources */,
@@ -919,6 +1008,7 @@
 				424D0BFF2BB45A9200E4EA0E /* RegistrationViewModelProtocol.swift in Sources */,
 				42F5BF4D2C92060A00DBFFBD /* UploadPostViewController.swift in Sources */,
 				420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */,
+				42FE625B2CA5EA21009901D6 /* Comment.swift in Sources */,
 				42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */,
 				42FE62502CA5E2A9009901D6 /* CommentService.swift in Sources */,
 				422E56AC2C9E07B300867FC3 /* PostList.swift in Sources */,
@@ -942,8 +1032,10 @@
 				42A31A772BB5D1B00074F8DB /* LoginService.swift in Sources */,
 				4281F3632BC8A52300A45350 /* SearchViewModelProtocol.swift in Sources */,
 				424D0BF82BB4551400E4EA0E /* LoginViewModelProtocol.swift in Sources */,
+				42FE62582CA5E53F009901D6 /* CommentViewModelProtocol.swift in Sources */,
 				42F5BF622C92284500DBFFBD /* Post.swift in Sources */,
 				420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */,
+				42FE62562CA5E4EA009901D6 /* CommentViewModel.swift in Sources */,
 				42A31A7E2BB5E4CD0074F8DB /* ProfileHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

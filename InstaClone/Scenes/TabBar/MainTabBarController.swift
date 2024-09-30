@@ -9,7 +9,7 @@ import UIKit
 import YPImagePicker
 
 class MainTabBarController: UITabBarController {
-    private var user: User?
+    var user: User?
     var viewModel: MainTabBarViewModelProtocol?
     
     override func viewDidLoad() {

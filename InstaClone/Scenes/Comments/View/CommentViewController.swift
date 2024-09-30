@@ -8,6 +8,7 @@
 import UIKit
 
 class CommentViewController: UICollectionViewController {
+    var viewModel: CommentViewModelProtocol?
     
     private lazy var commentInputView: CommentInputAccesoryView = {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
@@ -20,6 +21,7 @@ class CommentViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        getComments()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,16 +53,33 @@ class CommentViewController: UICollectionViewController {
         collectionView.keyboardDismissMode = .interactive
     }
     
+    private func getComments() {
+        self.viewModel?.getComments {
+            self.collectionView.reloadData()
+        }
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return viewModel?.comments.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CommentCell.identifier, for: indexPath) as! CommentCell
         
+        if let comment = self.viewModel?.comments[indexPath.row] {
+            cell.viewModel = CommentCellViewModel(comment: comment)
+        }
+        
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let uid = viewModel?.comments[indexPath.row].uid,
+              let navigation = self.navigationController else { return }
+        
+        viewModel?.getUser(with: uid)
     }
 }
 
@@ -74,6 +93,10 @@ extension CommentViewController: UICollectionViewDelegateFlowLayout {
 
 extension CommentViewController: CommentInputAccesoryViewDelegate {
     func inputView(_ inputView: CommentInputAccesoryView, wantsToUpload comment: String) {
+        self.showLoader(true)
         inputView.clearCommentTextView()
+        self.viewModel?.uploadComment(comment: comment, completion: {
+            self.showLoader(false)
+        })
     }
 }
