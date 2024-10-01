@@ -13,7 +13,7 @@ protocol FeedViewModelProtocol {
     var post: PostList? { get set }
     
     func getPosts(completion: @escaping () -> ())
-    func like(completion: @escaping (Bool) -> ())
+    func didTapLike(post: PostList, completion: @escaping (Bool) -> ())
     func signOut()
 }
 

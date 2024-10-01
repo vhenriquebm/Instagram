@@ -127,9 +127,9 @@ extension FeedViewController: FeedCellDelegate {
     func cell(_ cell: FeedCollectionViewCell, didLike post: PostList) {
         self.viewModel?.post?.didLike?.toggle()
         
-        viewModel?.like { like in
+        viewModel?.didTapLike(post: post, completion: { like in
             cell.setupLikeButton(like: like)
-        }
+        })
     }
     
     func cell(_ cell: FeedCollectionViewCell, wantsToShowCommentsFor post: PostList) {
