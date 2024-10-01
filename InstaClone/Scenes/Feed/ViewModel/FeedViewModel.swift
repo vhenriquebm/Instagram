@@ -22,8 +22,23 @@ class FeedViewModel: FeedViewModelProtocol {
         
         self.service.getPosts { posts in
             self.postList = posts
-            completion()
+            
+            self.checkIfUserLikedPost(completion: completion)
         }
+    }
+    
+    private func checkIfUserLikedPost(completion: @escaping () -> ()) {
+        self.postList.forEach { post in
+            
+            service.checkIfUserLikedPost(post: post) { didLike in
+                if let index = self.postList.firstIndex(where: { $0.postId == post.postId }) {
+                    self.postList[index].didLike = didLike
+                }
+                
+                completion()
+            }
+        }
+        print (postList)
     }
     
     func didTapLike(post: PostList, completion: @escaping (Bool) -> ()) {

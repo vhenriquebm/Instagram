@@ -8,12 +8,10 @@
 import Foundation
 
 struct FeedCollectionCellViewModel {
-    let post: PostList
+    var post: PostList
     
     init(post: PostList) {
         self.post = post
-        
-        print ("DEBUG - NA CELULA O POST E \(post)")
     }
     
     var ownerImageUrl: URL? {
@@ -30,6 +28,10 @@ struct FeedCollectionCellViewModel {
     
     var likes: String {
         post.likes == 1 ? "\(post.likes) like" : "\(post.likes) likes"
+    }
+    
+    var didLike: Bool? {
+        return post.didLike
     }
     
     var caption: String {

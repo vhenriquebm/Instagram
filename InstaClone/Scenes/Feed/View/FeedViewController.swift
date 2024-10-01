@@ -129,6 +129,12 @@ extension FeedViewController: FeedCellDelegate {
         
         viewModel?.didTapLike(post: post, completion: { like in
             cell.setupLikeButton(like: like)
+            
+            if like {
+                cell.viewModel?.post.likes = post.likes + 1
+            } else {
+                cell.viewModel?.post.likes = post.likes - 1
+            }
         })
     }
     

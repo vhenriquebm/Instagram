@@ -11,4 +11,5 @@ protocol FeedServiceProtocol {
     func getPosts(completion: @escaping ([PostList])->())
     func like(post: PostList, completion: @escaping(FirestoreCompletion))
     func unLike(post: PostList, completion: @escaping(FirestoreCompletion))
+    func checkIfUserLikedPost(post: PostList, completion: @escaping(Bool) -> Void)
 }

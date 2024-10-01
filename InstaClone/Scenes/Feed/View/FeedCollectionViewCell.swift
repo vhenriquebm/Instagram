@@ -176,6 +176,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
         postImageView.sd_setImage(with: viewModel.imageUrl)
         self.captionLabel.text = viewModel.caption
         self.likesLabel.text = viewModel.likes
+        
+        if let didLike = viewModel.didLike {
+                print("DEBUG - DID LIKE - \(didLike)")
+                setupLikeButton(like: didLike)
+            } else {
+                // Se não houver valor definido, redefina o botão para um estado padrão (opcional)
+                setupLikeButton(like: false)
+            }
     }
     
     @objc private func didTapComments() {
@@ -191,10 +199,11 @@ class FeedCollectionViewCell: UICollectionViewCell {
     func setupLikeButton(like: Bool) {
         if like {
             likeButton.setImage(.likeSelected, for: .normal)
-            likeButton.setTitleColor(.red, for: .normal)
+            likeButton.tintColor = .red
         } else {
+            
             likeButton.setImage(.likeUnselected, for: .normal)
-            likeButton.setTitleColor(.black, for: .normal)
+            likeButton.tintColor = .black
         }
     }
 }

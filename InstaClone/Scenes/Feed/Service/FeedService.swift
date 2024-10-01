@@ -44,4 +44,13 @@ class FeedService: FeedServiceProtocol {
             COLLECTION_USERS.document(uid).collection("user-likes").document(post.postId).delete(completion: completion)
         }
     }
+    
+    func checkIfUserLikedPost(post: PostList, completion: @escaping(Bool) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        COLLECTION_USERS.document(uid).collection("user-likes").document(post.postId).getDocument { snapshot, _ in
+            guard let didLike = snapshot?.exists else { return }
+            completion(didLike)
+        }
+    }
 }
