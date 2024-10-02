@@ -31,7 +31,6 @@ class ProfileHeader: UICollectionReusableView {
     
     private lazy var profileNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Venom"
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = .black
         label.textAlignment = .center

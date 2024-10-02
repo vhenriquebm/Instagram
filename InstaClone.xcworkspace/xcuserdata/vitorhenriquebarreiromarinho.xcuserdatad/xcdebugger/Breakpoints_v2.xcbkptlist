@@ -18,36 +18,6 @@
             endingLineNumber = "205"
             landmarkName = "didTapUserProfileImage()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "04C6CCCA-5BB0-4FE7-93F7-0AF2278CD544 - c8e2ffff605253d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "InstaClone.FeedCollectionViewCell.didTapUserProfileImage() -&gt; ()"
-                  moduleName = "InstaClone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitorhenriquebarreiromarinho/Desktop/InstaClone/InstaClone/Scenes/Feed/View/FeedCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "205"
-                  endingLineNumber = "205">
-               </Location>
-               <Location
-                  uuid = "04C6CCCA-5BB0-4FE7-93F7-0AF2278CD544 - c8e2ffff605253f4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "InstaClone.FeedCollectionViewCell.didTapUserProfileImage() -&gt; ()"
-                  moduleName = "InstaClone"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitorhenriquebarreiromarinho/Desktop/InstaClone/InstaClone/Scenes/Feed/View/FeedCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "206"
-                  endingLineNumber = "206">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

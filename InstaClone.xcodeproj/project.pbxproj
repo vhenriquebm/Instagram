@@ -17,6 +17,7 @@
 		420609AE2BB31765007E5D5B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609AD2BB31765007E5D5B /* FeedViewController.swift */; };
 		420609B12BB317C0007E5D5B /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B02BB317C0007E5D5B /* NotificationsViewController.swift */; };
 		420609B42BB31804007E5D5B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420609B32BB31804007E5D5B /* ProfileViewController.swift */; };
+		421EED1C2CACC5EA00AD6839 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EED1B2CACC5EA00AD6839 /* NotificationsTableViewCell.swift */; };
 		422E56A62C9E058600867FC3 /* FeedServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E56A52C9E058600867FC3 /* FeedServiceProtocol.swift */; };
 		422E56A92C9E070100867FC3 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E56A82C9E070100867FC3 /* FeedService.swift */; };
 		422E56AC2C9E07B300867FC3 /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422E56AB2C9E07B300867FC3 /* PostList.swift */; };
@@ -104,6 +105,7 @@
 		420609AD2BB31765007E5D5B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		420609B02BB317C0007E5D5B /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		420609B32BB31804007E5D5B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		421EED1B2CACC5EA00AD6839 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		422E56A52C9E058600867FC3 /* FeedServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceProtocol.swift; sourceTree = "<group>"; };
 		422E56A82C9E070100867FC3 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		422E56AB2C9E07B300867FC3 /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
@@ -264,6 +266,8 @@
 		420609AF2BB317B0007E5D5B /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				421EED192CACC5CF00AD6839 /* ViewModel */,
+				421EED182CACC5CA00AD6839 /* View */,
 				420609B02BB317C0007E5D5B /* NotificationsViewController.swift */,
 			);
 			path = Notifications;
@@ -293,6 +297,29 @@
 				420609A42BB30D4B007E5D5B /* MainTabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		421EED182CACC5CA00AD6839 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				421EED1A2CACC5DC00AD6839 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		421EED192CACC5CF00AD6839 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		421EED1A2CACC5DC00AD6839 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				421EED1B2CACC5EA00AD6839 /* NotificationsTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		422E56A72C9E06F400867FC3 /* Service */ = {
@@ -1020,6 +1047,7 @@
 				422E56A62C9E058600867FC3 /* FeedServiceProtocol.swift in Sources */,
 				42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */,
 				42F5BF642C9228B400DBFFBD /* PostServiceProtocol.swift in Sources */,
+				421EED1C2CACC5EA00AD6839 /* NotificationsTableViewCell.swift in Sources */,
 				42AA0E392BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift in Sources */,
 				42FE624D2CA5DF71009901D6 /* CommentInputAccesoryViewDelegate.swift in Sources */,
 				42FE62452CA59B77009901D6 /* CommentCell.swift in Sources */,
