@@ -123,7 +123,18 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - FeedCellDelegate
 
 extension FeedViewController: FeedCellDelegate {
-
+    
+    func cell(_ cell: FeedCollectionViewCell, wantsToShowProfileFor uid: String) {
+        viewModel?.getUser(with: uid, completion: { user in
+            
+            let layout = UICollectionViewFlowLayout()
+            let controller = ProfileViewController(collectionViewLayout: layout)
+            controller.viewModel = ProfileViewModel(user: user)
+            controller.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(controller, animated: false)
+        })
+    }
+    
     func cell(_ cell: FeedCollectionViewCell, didLike post: PostList) {
         self.viewModel?.post?.didLike?.toggle()
         

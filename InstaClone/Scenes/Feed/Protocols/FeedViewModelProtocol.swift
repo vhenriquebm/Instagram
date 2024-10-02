@@ -14,6 +14,7 @@ protocol FeedViewModelProtocol {
     
     func getPosts(completion: @escaping () -> ())
     func didTapLike(post: PostList, completion: @escaping (Bool) -> ())
+    func getUser(with uid: String,  completion: @escaping profileCompletion)
     func signOut()
 }
 

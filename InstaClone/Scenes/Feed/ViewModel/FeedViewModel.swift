@@ -9,11 +9,13 @@ import Foundation
 
 class FeedViewModel: FeedViewModelProtocol {
     private var service: FeedServiceProtocol
+    private var userService: UserServiceProtocol
     var postList = [PostList]()
     var post: PostList?
     
-    init(service: FeedServiceProtocol, post: PostList? = nil ) {
+    init(service: FeedServiceProtocol, userService: UserServiceProtocol, post: PostList? = nil ) {
         self.service = service
+        self.userService = userService
         self.post = post
     }
     
@@ -38,7 +40,6 @@ class FeedViewModel: FeedViewModelProtocol {
                 completion()
             }
         }
-        print (postList)
     }
     
     func didTapLike(post: PostList, completion: @escaping (Bool) -> ()) {
@@ -55,6 +56,10 @@ class FeedViewModel: FeedViewModelProtocol {
                 completion(true)
             }
         }
+    }
+    
+    func getUser(with uid: String,  completion: @escaping profileCompletion) {
+        self.userService.getUser(with: uid, completion: completion)
     }
 }
 

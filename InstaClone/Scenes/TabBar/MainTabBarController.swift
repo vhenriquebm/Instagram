@@ -33,7 +33,8 @@ class MainTabBarController: UITabBarController {
         let layout = UICollectionViewFlowLayout()
         
         let feedContoller = FeedViewController(collectionViewLayout: layout)
-        feedContoller.viewModel = FeedViewModel(service: FeedService())
+        feedContoller.viewModel = FeedViewModel(service: FeedService(), 
+                                                userService: UserService())
     
         let feed = createController(unselectedImage: .homeUnselected,
                                     selectedImage: .homeSelected,

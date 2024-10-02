@@ -176,14 +176,20 @@ class FeedCollectionViewCell: UICollectionViewCell {
         postImageView.sd_setImage(with: viewModel.imageUrl)
         self.captionLabel.text = viewModel.caption
         self.likesLabel.text = viewModel.likes
-        
+        addGestureToProfileImageView()
+       
         if let didLike = viewModel.didLike {
-                print("DEBUG - DID LIKE - \(didLike)")
                 setupLikeButton(like: didLike)
             } else {
-                // Se não houver valor definido, redefina o botão para um estado padrão (opcional)
                 setupLikeButton(like: false)
             }
+    }
+    
+    private func addGestureToProfileImageView() {
+        profileImageView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(didTapUserProfileImage))
+        profileImageView.addGestureRecognizer(gesture)
     }
     
     @objc private func didTapComments() {
@@ -194,6 +200,11 @@ class FeedCollectionViewCell: UICollectionViewCell {
     @objc private func didTapLike() {
         guard let post = viewModel?.post else { return }
         delegate?.cell(self, didLike: post)
+    }
+    
+    @objc private func didTapUserProfileImage() {
+        guard let uid = viewModel?.post.ownerUid else { return }
+        self.delegate?.cell(self, wantsToShowProfileFor: uid)
     }
     
     func setupLikeButton(like: Bool) {
