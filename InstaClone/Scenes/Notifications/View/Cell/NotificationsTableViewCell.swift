@@ -29,6 +29,27 @@ class NotificationsTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let postImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private let followButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Loading", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 3
+        button.layer.borderWidth = 0.5
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureView()
@@ -45,6 +66,7 @@ class NotificationsTableViewCell: UITableViewCell {
         
         profileImageView.layer.cornerRadius =  48 / 2
         profileImageView.layer.masksToBounds = true
+        addGestures()
     }
     
     private func configureConstraints() {
@@ -59,5 +81,18 @@ class NotificationsTableViewCell: UITableViewCell {
             infoLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             infoLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10),
         ])
+    }
+    
+    private func addGestures() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapPostImageView))
+        postImageView.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func onTapPostImageView() {
+        
+    }
+    
+    @objc private func onTapFollowButton() {
+        
     }
 }
