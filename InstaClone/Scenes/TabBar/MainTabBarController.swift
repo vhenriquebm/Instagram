@@ -34,7 +34,7 @@ class MainTabBarController: UITabBarController {
         
         let feedContoller = FeedViewController(collectionViewLayout: layout)
         feedContoller.viewModel = FeedViewModel(service: FeedService(), 
-                                                userService: UserService())
+                                                userService: UserService(), notificationService: NotificationService())
     
         let feed = createController(unselectedImage: .homeUnselected,
                                     selectedImage: .homeSelected,
@@ -48,9 +48,12 @@ class MainTabBarController: UITabBarController {
                                              selectedImage: .plusPhoto,
                                              rootViewController: ImageSelectorViewController())
         
+        let notificationController = NotificationViewController()
+        notificationController.viewModel = NotificationViewModel(service: NotificationService())
+        
         let notification = createController(unselectedImage: .likeUnselected,
                                             selectedImage: .likeSelected,
-                                            rootViewController: NotificationViewController())
+                                            rootViewController: notificationController)
         
         let profileLayout = UICollectionViewFlowLayout()
         

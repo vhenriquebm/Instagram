@@ -138,11 +138,18 @@ extension FeedViewController: FeedCellDelegate {
     func cell(_ cell: FeedCollectionViewCell, didLike post: PostList) {
         self.viewModel?.post?.didLike?.toggle()
         
+        guard let tabBar = self.tabBarController as? MainTabBarController,
+              let user = tabBar.user else { return }
+        
+        
         viewModel?.didTapLike(post: post, completion: { like in
             cell.setupLikeButton(like: like)
             
             if like {
                 cell.viewModel?.post.likes = post.likes + 1
+                
+                self.viewModel?.uploadNotification(type: .like, post: post, user: user)
+                
             } else {
                 cell.viewModel?.post.likes = post.likes - 1
             }

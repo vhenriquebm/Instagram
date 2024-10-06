@@ -8,11 +8,13 @@
 import UIKit
 
 class NotificationViewController: UITableViewController {
+    var viewModel: NotificationViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureTableView()
+        getNotifications()
     }
     
     private func configureView() {
@@ -27,16 +29,26 @@ class NotificationViewController: UITableViewController {
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
     }
+    
+    private func getNotifications() {
+        self.viewModel?.getNotifications {            
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension NotificationViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.notifications.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NotificationsTableViewCell.identifier, for: indexPath) as! NotificationsTableViewCell
+        
+        if let notification = self.viewModel?.notifications[indexPath.row] {
+            cell.viewModel = NotificationsTableViewCellViewModel(notification: notification)
+        }
         
         return cell
     }

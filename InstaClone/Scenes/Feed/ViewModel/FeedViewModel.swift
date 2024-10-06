@@ -10,12 +10,15 @@ import Foundation
 class FeedViewModel: FeedViewModelProtocol {
     private var service: FeedServiceProtocol
     private var userService: UserServiceProtocol
+    private var notificationService: NotificationServiceProtocol
+    
     var postList = [PostList]()
     var post: PostList?
     
-    init(service: FeedServiceProtocol, userService: UserServiceProtocol, post: PostList? = nil ) {
+    init(service: FeedServiceProtocol, userService: UserServiceProtocol, notificationService: NotificationServiceProtocol, post: PostList? = nil ) {
         self.service = service
         self.userService = userService
+        self.notificationService = notificationService
         self.post = post
     }
     
@@ -60,6 +63,10 @@ class FeedViewModel: FeedViewModelProtocol {
     
     func getUser(with uid: String,  completion: @escaping profileCompletion) {
         self.userService.getUser(with: uid, completion: completion)
+    }
+    
+    func uploadNotification(type: NotificationType, post: PostList, user: User) {
+        self.notificationService.uploadNotification(type: type, post: post, user: user)
     }
 }
 

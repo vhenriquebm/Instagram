@@ -10,6 +10,10 @@ import UIKit
 class NotificationsTableViewCell: UITableViewCell {
     static let identifier = "NotificationsTableViewCell"
     
+    var viewModel: NotificationsTableViewCellViewModel? {
+        didSet { configure() }
+    }
+    
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,8 +28,8 @@ class NotificationsTableViewCell: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = .black
         label.textAlignment = .center
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Venom"
         return label
     }()
     
@@ -63,6 +67,7 @@ class NotificationsTableViewCell: UITableViewCell {
     private func configureView() {
         contentView.addSubview(profileImageView)
         contentView.addSubview(infoLabel)
+        contentView.addSubview(postImageView)
         
         profileImageView.layer.cornerRadius =  48 / 2
         profileImageView.layer.masksToBounds = true
@@ -80,7 +85,18 @@ class NotificationsTableViewCell: UITableViewCell {
             
             infoLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             infoLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10),
+            
+            postImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            postImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            postImageView.heightAnchor.constraint(equalToConstant: 48),
+            postImageView.widthAnchor.constraint(equalToConstant: 48),
         ])
+    }
+    
+    private func configure() {
+        self.profileImageView.sd_setImage(with: viewModel?.profileImageUrl)
+        self.infoLabel.attributedText = viewModel?.message
+        self.postImageView.sd_setImage(with: viewModel?.postImageView)
     }
     
     private func addGestures() {
