@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CommentCoordinatorProtocol {
-    func goToProfile(with user: User)
+    func goToProfile(with user: User?)
 }

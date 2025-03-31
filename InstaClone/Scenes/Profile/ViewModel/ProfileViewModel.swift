@@ -8,16 +8,16 @@
 import Foundation
 
 class ProfileViewModel: ProfileViewModelProtocol {
-    private var user: User
+    private var user: User?
     private var service: ProfileService
     var posts = [PostList]()
     
-    required init(user: User) {
+    required init(user: User?) {
         self.user = user
         self.service = ProfileService()
     }
     
-    var getUser: User {
+    var getUser: User? {
         return user
     }
     

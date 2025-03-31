@@ -59,7 +59,7 @@ class MainTabBarController: UITabBarController {
         
         
         let controller = ProfileViewController(collectionViewLayout: profileLayout)
-        let viewModel = ProfileViewModel(user: user!)
+        let viewModel = ProfileViewModel(user: user)
         controller.viewModel = viewModel
         let profile = createController(unselectedImage: .profileUnselected,
                                        selectedImage: .profileSelected,

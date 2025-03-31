@@ -9,9 +9,9 @@ import UIKit
 
 class ProfileCoordinator: Coordinator {
     var navigation: UINavigationController
-    private var user: User
+    private var user: User?
     
-    init(navigation: UINavigationController, user: User) {
+    init(navigation: UINavigationController, user: User?) {
         self.navigation = navigation
         self.user = user
     }

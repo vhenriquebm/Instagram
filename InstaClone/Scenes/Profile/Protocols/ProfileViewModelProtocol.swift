@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ProfileViewModelProtocol {
-    var getUser: User { get }
+    var getUser: User? { get }
     var posts: [PostList] { get set }
     
     func follow(uuid: String, completion: @escaping FirestoreCompletion)

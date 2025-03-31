@@ -38,7 +38,7 @@ class CommentCoordinator: Coordinator {
 
 extension CommentCoordinator: CommentCoordinatorProtocol {
     
-    func goToProfile(with user: User) {
+    func goToProfile(with user: User?) {
         
         let coordinator = ProfileCoordinator(navigation: navigation, user: user)
         coordinator.start()

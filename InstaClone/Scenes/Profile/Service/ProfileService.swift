@@ -7,17 +7,32 @@
 
 import Firebase
 
-typealias profileCompletion = (User) -> ()
+typealias profileCompletion = (User?) -> ()
 typealias usersCompletion = (([User]) -> ())
 typealias FirestoreCompletion = (Error?) -> Void
 typealias UserStatsCompletion = (UserStats) -> ()
 
 struct ProfileService {
     static func getUser(completion: @escaping profileCompletion) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("Erro: UID do usuário não encontrado.")
+            completion(nil)
+            return
+        }
+        
         COLLECTION_USERS.document(uid).getDocument { snapshot, error in
+            if let error = error {
+                print("Erro ao buscar usuário: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
             
-            guard let dictionary = snapshot?.data() else { return }
+            guard let dictionary = snapshot?.data() else {
+                print("Erro: Snapshot sem dados.")
+                completion(nil)
+                return
+            }
+            
             let user = User(dictionary: dictionary)
             completion(user)
         }
