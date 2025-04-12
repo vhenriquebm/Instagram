@@ -10,11 +10,13 @@ import Foundation
 class ProfileViewModel: ProfileViewModelProtocol {
     private var user: User?
     private var service: ProfileService
+    private var notificationService: NotificationService
     var posts = [PostList]()
     
     required init(user: User?) {
         self.user = user
         self.service = ProfileService()
+        self.notificationService = NotificationService()
     }
     
     var getUser: User? {
@@ -42,5 +44,13 @@ class ProfileViewModel: ProfileViewModelProtocol {
             self.posts = posts
             completion()
         }
+    }
+    
+    func uploadNotification(toUid: String, from user: User, type: NotificationType) {
+        
+        notificationService.uploadNotification(to: toUid,
+                                               from: user,
+                                               type: type,
+                                               post: nil)
     }
 }

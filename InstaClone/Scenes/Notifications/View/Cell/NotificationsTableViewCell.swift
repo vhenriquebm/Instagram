@@ -68,6 +68,7 @@ class NotificationsTableViewCell: UITableViewCell {
         contentView.addSubview(profileImageView)
         contentView.addSubview(infoLabel)
         contentView.addSubview(postImageView)
+        contentView.addSubview(followButton)
         
         profileImageView.layer.cornerRadius =  48 / 2
         profileImageView.layer.masksToBounds = true
@@ -85,11 +86,18 @@ class NotificationsTableViewCell: UITableViewCell {
             
             infoLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             infoLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10),
+            infoLabel.trailingAnchor.constraint(equalTo: followButton.leadingAnchor, constant: 4),
             
             postImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             postImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             postImageView.heightAnchor.constraint(equalToConstant: 48),
             postImageView.widthAnchor.constraint(equalToConstant: 48),
+            
+            followButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            followButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            followButton.heightAnchor.constraint(equalToConstant: 32),
+            followButton.widthAnchor.constraint(equalToConstant: 100),
+            
         ])
     }
     
@@ -97,6 +105,11 @@ class NotificationsTableViewCell: UITableViewCell {
         self.profileImageView.sd_setImage(with: viewModel?.profileImageUrl)
         self.infoLabel.attributedText = viewModel?.message
         self.postImageView.sd_setImage(with: viewModel?.postImageView)
+        
+        if let viewModel = viewModel {
+            followButton.isHidden = !viewModel.shouldHidePostImage
+            postImageView.isHidden = viewModel.shouldHidePostImage
+        }
     }
     
     private func addGestures() {

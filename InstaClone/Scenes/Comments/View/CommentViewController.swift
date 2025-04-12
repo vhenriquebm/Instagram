@@ -76,8 +76,7 @@ class CommentViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let uid = viewModel?.comments[indexPath.row].uid,
-              let navigation = self.navigationController else { return }
+        guard let uid = viewModel?.comments[indexPath.row].uid else { return }
         
         viewModel?.getUser(with: uid)
     }
@@ -93,10 +92,17 @@ extension CommentViewController: UICollectionViewDelegateFlowLayout {
 
 extension CommentViewController: CommentInputAccesoryViewDelegate {
     func inputView(_ inputView: CommentInputAccesoryView, wantsToUpload comment: String) {
+        
+        guard let tab = tabBarController as? MainTabBarController,
+              let currentUser = tab.user else { return }
+        
         self.showLoader(true)
         inputView.clearCommentTextView()
         self.viewModel?.uploadComment(comment: comment, completion: {
             self.showLoader(false)
+            
+            self.viewModel?.uploadNotification(from: currentUser,type: .comment)
+            
         })
     }
 }

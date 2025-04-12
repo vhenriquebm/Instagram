@@ -130,7 +130,12 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ProfileViewController: ProfileHeaderDelegate {
+    
     func header(_ profileHeader: ProfileHeader, didTapActionButtonFor user: User) {
+        
+        guard let tab = tabBarController as? MainTabBarController,
+              let currentUser = tab.user else { return }
+        
         if user.isCurrentUser {
             
         } else if user.isFollewed {
@@ -142,12 +147,19 @@ extension ProfileViewController: ProfileHeaderDelegate {
                 }
             })
         } else {
-            viewModel?.follow(uuid: user.uid, completion: { error in
-                self.user?.isFollewed = true
+            
+            viewModel?.follow(uuid: user.uid, completion: { [ weak self ] error in
+                
+                
+                self?.user?.isFollewed = true
                 
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                    self?.collectionView.reloadData()
                 }
+                
+                self?.viewModel?.uploadNotification(toUid: user.uid,
+                                              from: currentUser, type: .follow)
+                
             })
         }
     }

@@ -16,4 +16,5 @@ protocol ProfileViewModelProtocol {
     func checkIfUserIsFollowed(uid: String, completion: @escaping(Bool) -> Void)
     func getUserStats(uid: String, completion: @escaping UserStatsCompletion)
     func getPosts(uuid: String, completion: @escaping () -> ())
+    func uploadNotification(toUid: String, from user: User, type: NotificationType)
 }

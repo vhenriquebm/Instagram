@@ -32,4 +32,8 @@ class NotificationsTableViewCellViewModel {
     var postImageView: URL? {
         return URL(string: notification.postImageUrl)
     }
+    
+    var shouldHidePostImage: Bool {
+        return self.notification.type == .follow
+    }
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 protocol NotificationServiceProtocol {
-    func uploadNotification(type: NotificationType, post: PostList?, user: User)
+    func uploadNotification(to uid: String, from user: User,type: NotificationType, post: PostList?)
     func getNotifications(completion: @escaping([Notification]) -> Void)
 }

@@ -24,7 +24,8 @@ class CommentCoordinator: Coordinator {
         let controller = CommentViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
         let viewModel = CommentViewModel(service: CommentService(),
-                                         userService: UserService(), 
+                                         userService: UserService(),
+                                         notificationService: NotificationService(), 
                                          coordinator: self,
                                          post: post, user: user)
         

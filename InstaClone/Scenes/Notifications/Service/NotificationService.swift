@@ -9,25 +9,27 @@ import Firebase
 
 struct NotificationService: NotificationServiceProtocol  {
     
-    func uploadNotification(type: NotificationType, post: PostList? = nil, user: User) {
-        guard let currentUid = Auth.auth().currentUser?.uid,
-              let post = post else { return }
-                
-        let docReference = COLLECTION_NOTIFICATIONS.document(post.ownerUid).collection("user-notifications").document()
+    func uploadNotification(to uid: String, from user: User,
+                            type: NotificationType, post: PostList? = nil) {
+        
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        
+        guard uid != currentUid else { return }
+        
+        let docReference = COLLECTION_NOTIFICATIONS.document(uid).collection("user-notifications").document()
         
         var data: [String: Any] = ["timestamp": Timestamp(date: Date()),
-                                   "uid": currentUid,
+                                   "uid": user.uid,
                                    "type": type.rawValue,
                                    "id": docReference.documentID,
                                    "userProfileImageUrl": user.profileImageUrl,
                                    "userName": user.username ]
         
         
-        data["postId"] = post.postId
-        data["postImageUrl"] = post.imageUrl
-        
-        
-        print ("DATA - \(data)")
+        if let post = post {
+            data["postId"] = post.postId
+            data["postImageUrl"] = post.imageUrl
+        }
         
         docReference.setData(data)
     }

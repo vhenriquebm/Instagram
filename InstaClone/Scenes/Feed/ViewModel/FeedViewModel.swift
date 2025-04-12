@@ -66,7 +66,11 @@ class FeedViewModel: FeedViewModelProtocol {
     }
     
     func uploadNotification(type: NotificationType, post: PostList, user: User) {
-        self.notificationService.uploadNotification(type: type, post: post, user: user)
+        
+        self.notificationService.uploadNotification(to: post.ownerUid,
+                                                    from: user,
+                                                    type: .like,
+                                                    post: post)
     }
 }
 

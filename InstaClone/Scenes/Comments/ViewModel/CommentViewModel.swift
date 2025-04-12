@@ -10,14 +10,16 @@ import Foundation
 class CommentViewModel: CommentViewModelProtocol {
     private var service: CommentServiceProtocol
     private var userService: UserServiceProtocol
+    private var notificationService: NotificationService
     private var coordinator: CommentCoordinatorProtocol
     private var post: PostList
     private var user: User
     var comments = [Comment]()
     
-    init(service: CommentServiceProtocol, userService: UserServiceProtocol, coordinator: CommentCoordinatorProtocol, post: PostList, user: User) {
+    init(service: CommentServiceProtocol, userService: UserServiceProtocol, notificationService: NotificationService, coordinator: CommentCoordinatorProtocol, post: PostList, user: User) {
         self.service = service
         self.userService = userService
+        self.notificationService = notificationService
         self.coordinator = coordinator
         self.post = post
         self.user = user
@@ -40,5 +42,13 @@ class CommentViewModel: CommentViewModelProtocol {
         self.userService.getUser(with: uid) { user in
             self.coordinator.goToProfile(with: user)
         }
+    }
+    
+    func uploadNotification(from user: User, type: NotificationType) {
+        
+        notificationService.uploadNotification(to: post.ownerUid,
+                                               from: user,
+                                               type: type,
+                                               post: post)
     }
 }
