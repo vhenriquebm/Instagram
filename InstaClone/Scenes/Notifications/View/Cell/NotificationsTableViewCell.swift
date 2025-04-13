@@ -14,6 +14,8 @@ class NotificationsTableViewCell: UITableViewCell {
         didSet { configure() }
     }
     
+    weak var delegate: NotificationCellDelegate?
+    
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,6 +107,9 @@ class NotificationsTableViewCell: UITableViewCell {
         self.profileImageView.sd_setImage(with: viewModel?.profileImageUrl)
         self.infoLabel.attributedText = viewModel?.message
         self.postImageView.sd_setImage(with: viewModel?.postImageView)
+        self.followButton.setTitle(viewModel?.followButtonText, for: .normal)
+        self.followButton.backgroundColor = viewModel?.followButtonBackgroundColor
+        self.followButton.setTitleColor(viewModel?.followButtonTextColor, for: .normal)
         
         if let viewModel = viewModel {
             followButton.isHidden = !viewModel.shouldHidePostImage
@@ -115,6 +120,12 @@ class NotificationsTableViewCell: UITableViewCell {
     private func addGestures() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapPostImageView))
         postImageView.addGestureRecognizer(gesture)
+    }
+    
+    
+    @objc func handlePostTapped() {
+        guard let postId = viewModel?.notification.postId else { return }
+        delegate?.cell(self, wantsToViewPost: postId)
     }
     
     @objc private func onTapPostImageView() {

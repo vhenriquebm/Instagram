@@ -50,6 +50,7 @@
 		4294357F2BB38C4200AB5121 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294357E2BB38C4200AB5121 /* RegistrationViewController.swift */; };
 		429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429435802BB3A17600AB5121 /* CustomTextField.swift */; };
 		429435852BB3A64000AB5121 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429435842BB3A64000AB5121 /* UIButton+.swift */; };
+		4294E4942DAB336100796BA9 /* NotificationCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294E4932DAB336100796BA9 /* NotificationCellDelegate.swift */; };
 		42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A622BB499210074F8DB /* RegistrationView.swift */; };
 		42A31A662BB4A9400074F8DB /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A652BB4A9400074F8DB /* ImageUploader.swift */; };
 		42A31A6B2BB4ABB80074F8DB /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A6A2BB4ABB80074F8DB /* UserRegistration.swift */; };
@@ -144,6 +145,7 @@
 		4294357E2BB38C4200AB5121 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		429435802BB3A17600AB5121 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		429435842BB3A64000AB5121 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		4294E4932DAB336100796BA9 /* NotificationCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellDelegate.swift; sourceTree = "<group>"; };
 		42A31A622BB499210074F8DB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		42A31A652BB4A9400074F8DB /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		42A31A6A2BB4ABB80074F8DB /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 			children = (
 				426B0CA62CB2DFE7004AD044 /* NotificationServiceProtocol.swift */,
 				426B0CAA2CB2ED39004AD044 /* NotificationViewModelProtocol.swift */,
+				4294E4932DAB336100796BA9 /* NotificationCellDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 				42AA0E322BC4B10D000C85A4 /* UserSession.swift in Sources */,
 				42F5BF642C9228B400DBFFBD /* PostServiceProtocol.swift in Sources */,
 				421EED1C2CACC5EA00AD6839 /* NotificationsTableViewCell.swift in Sources */,
+				4294E4942DAB336100796BA9 /* NotificationCellDelegate.swift in Sources */,
 				42AA0E392BC5F6FE000C85A4 /* MainTabBarViewModelProtocol.swift in Sources */,
 				42FE624D2CA5DF71009901D6 /* CommentInputAccesoryViewDelegate.swift in Sources */,
 				42FE62452CA59B77009901D6 /* CommentCell.swift in Sources */,

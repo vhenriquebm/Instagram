@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class NotificationsTableViewCellViewModel {
-    private var notification: Notification
+    var notification: Notification
     
     init(notification: Notification) {
         self.notification = notification
@@ -35,5 +35,17 @@ class NotificationsTableViewCellViewModel {
     
     var shouldHidePostImage: Bool {
         return self.notification.type == .follow
+    }
+    
+    var followButtonText: String {
+        return notification.userIsFollowed ? "Following" : "Follow"
+    }
+    
+    var followButtonBackgroundColor: UIColor {
+        return notification.userIsFollowed ? .white : .systemBlue
+    }
+    
+    var followButtonTextColor: UIColor {
+        return notification.userIsFollowed ? .black : .white
     }
 }
