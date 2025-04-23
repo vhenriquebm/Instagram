@@ -126,4 +126,12 @@ extension ProfileService {
             completion(posts)
         }
     }
+    
+    func getPost(with uuid: String, completion: @escaping (PostList) -> ()) {
+        COLLECTION_POSTS.document(uuid).getDocument() { snapshot, _ in
+            guard let snapshot = snapshot else { return }
+            let post = PostList(postId: snapshot.documentID, dictionary: snapshot.data() ?? [:])
+            completion(post)
+        }
+    }
 }

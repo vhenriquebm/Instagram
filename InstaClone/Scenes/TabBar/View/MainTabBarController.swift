@@ -49,11 +49,18 @@ class MainTabBarController: UITabBarController {
                                              rootViewController: ImageSelectorViewController())
         
         let notificationController = NotificationViewController()
-        notificationController.viewModel = NotificationViewModel(service: NotificationService(), profileService: ProfileService())
+        let navigation = UINavigationController(rootViewController: notificationController)
+        let coordinator = NotificationsCoordinator(navigation: navigation)
+
+        notificationController.viewModel = NotificationViewModel(service: NotificationService(),
+                                                                 profileService: ProfileService(),
+                                                                 coordinator: coordinator)
         
-        let notification = createController(unselectedImage: .likeUnselected,
+        let notification = createNotificationsController(unselectedImage: .likeUnselected,
                                             selectedImage: .likeSelected,
-                                            rootViewController: notificationController)
+                                                         rootViewController:
+                                                            navigation,
+                                                         navigation: navigation)
         
         let profileLayout = UICollectionViewFlowLayout()
         
@@ -72,6 +79,19 @@ class MainTabBarController: UITabBarController {
     
     private func createController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: rootViewController)
+        
+        let tabBarItemSize = CGSize(width: 25, height: 25)
+        let resizedUnselectedImage = unselectedImage.resized(to: tabBarItemSize)
+        let resizedSelectedImage = selectedImage.resized(to: tabBarItemSize)
+        
+        navigation.tabBarItem.image = resizedUnselectedImage
+        navigation.tabBarItem.selectedImage = resizedSelectedImage
+        navigation.navigationBar.tintColor = .black
+        
+        return navigation
+    }
+    
+    private func createNotificationsController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController, navigation: UINavigationController) -> UINavigationController {
         
         let tabBarItemSize = CGSize(width: 25, height: 25)
         let resizedUnselectedImage = unselectedImage.resized(to: tabBarItemSize)

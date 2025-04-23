@@ -22,6 +22,7 @@ class NotificationsTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .lightGray
         imageView.image = .venom7
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -35,15 +36,16 @@ class NotificationsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let postImageView: UIImageView = {
+    private lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
-    private let followButton: UIButton = {
+    private lazy var followButton: UIButton = {
         let button = UIButton()
         button.setTitle("Loading", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -52,6 +54,7 @@ class NotificationsTableViewCell: UITableViewCell {
         button.layer.cornerRadius = 3
         button.layer.borderWidth = 0.5
         button.layer.borderColor = UIColor.lightGray.cgColor
+        button.isUserInteractionEnabled = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -67,14 +70,20 @@ class NotificationsTableViewCell: UITableViewCell {
     }
     
     private func configureView() {
-        contentView.addSubview(profileImageView)
-        contentView.addSubview(infoLabel)
-        contentView.addSubview(postImageView)
-        contentView.addSubview(followButton)
+        addSubViews()
+        
+        self.selectionStyle = .none
         
         profileImageView.layer.cornerRadius =  48 / 2
         profileImageView.layer.masksToBounds = true
         addGestures()
+    }
+    
+    private func addSubViews() {
+        contentView.addSubview(profileImageView)
+        contentView.addSubview(infoLabel)
+        contentView.addSubview(postImageView)
+        contentView.addSubview(followButton)
     }
     
     private func configureConstraints() {
@@ -117,11 +126,19 @@ class NotificationsTableViewCell: UITableViewCell {
         }
     }
     
+    func setupFollowButtonState() {
+        self.followButton.setTitle(viewModel?.followButtonText, for: .normal)
+        self.followButton.backgroundColor = viewModel?.followButtonBackgroundColor
+        self.followButton.setTitleColor(viewModel?.followButtonTextColor, for: .normal)
+    }
+    
     private func addGestures() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(onTapPostImageView))
         postImageView.addGestureRecognizer(gesture)
+        
+        followButton.addTarget(self, action: #selector(onTapFollowButton), for: .touchUpInside)
+
     }
-    
     
     @objc func handlePostTapped() {
         guard let postId = viewModel?.notification.postId else { return }
@@ -129,10 +146,17 @@ class NotificationsTableViewCell: UITableViewCell {
     }
     
     @objc private func onTapPostImageView() {
-        
+        guard let postId = viewModel?.notification.postId else { return }
+        delegate?.cell(self, wantsToViewPost: postId)
     }
     
     @objc private func onTapFollowButton() {
+        guard let viewModel = viewModel else { return }
         
+        if viewModel.notification.userIsFollowed {
+            delegate?.cell(self, wantsToUnFollow: viewModel.notification.uid)
+        } else {
+            delegate?.cell(self, wantsToFollow: viewModel.notification.uid)
+        }        
     }
 }

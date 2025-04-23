@@ -51,6 +51,7 @@
 		429435812BB3A17600AB5121 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429435802BB3A17600AB5121 /* CustomTextField.swift */; };
 		429435852BB3A64000AB5121 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429435842BB3A64000AB5121 /* UIButton+.swift */; };
 		4294E4942DAB336100796BA9 /* NotificationCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294E4932DAB336100796BA9 /* NotificationCellDelegate.swift */; };
+		42990D192DB9562300383439 /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42990D182DB9562300383439 /* NotificationsCoordinator.swift */; };
 		42A31A632BB499210074F8DB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A622BB499210074F8DB /* RegistrationView.swift */; };
 		42A31A662BB4A9400074F8DB /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A652BB4A9400074F8DB /* ImageUploader.swift */; };
 		42A31A6B2BB4ABB80074F8DB /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A31A6A2BB4ABB80074F8DB /* UserRegistration.swift */; };
@@ -146,6 +147,7 @@
 		429435802BB3A17600AB5121 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		429435842BB3A64000AB5121 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		4294E4932DAB336100796BA9 /* NotificationCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCellDelegate.swift; sourceTree = "<group>"; };
+		42990D182DB9562300383439 /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
 		42A31A622BB499210074F8DB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		42A31A652BB4A9400074F8DB /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		42A31A6A2BB4ABB80074F8DB /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		420609AF2BB317B0007E5D5B /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				42990D172DB9560E00383439 /* Coordinator */,
 				426B0CA52CB2DFCF004AD044 /* Protocols */,
 				426B0CA12CB2DC17004AD044 /* Service */,
 				426B0C9E2CB2D6B6004AD044 /* Model */,
@@ -310,7 +313,6 @@
 				42AA0E342BC5F68E000C85A4 /* ViewModel */,
 				42AA0E332BC5F689000C85A4 /* View */,
 				4243131B2BBCCDE300BEE02C /* Coordinator */,
-				420609A42BB30D4B007E5D5B /* MainTabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -557,6 +559,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		42990D172DB9560E00383439 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				42990D182DB9562300383439 /* NotificationsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		42A31A642BB4A8F60074F8DB /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +694,7 @@
 		42AA0E332BC5F689000C85A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				420609A42BB30D4B007E5D5B /* MainTabBarController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1073,6 +1084,7 @@
 				42681D2B2CAB2A6D006307E0 /* UserServiceProtocol.swift in Sources */,
 				42FE623C2CA489DE009901D6 /* ProfileCollectionViewCellViewModel.swift in Sources */,
 				42A31A6D2BB4AD800074F8DB /* RegistrationService.swift in Sources */,
+				42990D192DB9562300383439 /* NotificationsCoordinator.swift in Sources */,
 				42681D2E2CAB2D63006307E0 /* CommentCoordinator.swift in Sources */,
 				424D0BF52BB4548B00E4EA0E /* LoginViewModel.swift in Sources */,
 				42A7765F2BB7274F007CA1E4 /* ProfileViewModel.swift in Sources */,

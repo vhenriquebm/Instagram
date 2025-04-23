@@ -61,7 +61,11 @@ extension NotificationViewController {
 extension NotificationViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         
+        guard let uid = viewModel?.notifications[indexPath.row].uid else { return }
+        
+        viewModel?.getUser(with: uid)
     }
 }
 
@@ -70,15 +74,26 @@ extension NotificationViewController {
 extension NotificationViewController: NotificationCellDelegate {
     
     func cell(_ cell: NotificationsTableViewCell, wantsToFollow uid: String) {
-        
+        self.viewModel?.follow(with: uid, completion: { _ in
+            cell.viewModel?.notification.userIsFollowed.toggle()
+            
+            DispatchQueue.main.async {
+                cell.setupFollowButtonState()
+            }
+        })
     }
     
     func cell(_ cell: NotificationsTableViewCell, wantsToUnFollow uid: String) {
-        
+        self.viewModel?.unFollow(with: uid, completion: { _ in
+            cell.viewModel?.notification.userIsFollowed.toggle()
+            
+            DispatchQueue.main.async {
+                cell.setupFollowButtonState()
+            }
+        })
     }
     
     func cell(_ cell: NotificationsTableViewCell, wantsToViewPost uid: String) {
-        
+        viewModel?.getPost(with: uid)
     }
-    
 }
