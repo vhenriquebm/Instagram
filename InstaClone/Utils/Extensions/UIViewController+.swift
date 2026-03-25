@@ -10,10 +10,10 @@ import JGProgressHUD
 
 extension UIViewController {
     static let hud = JGProgressHUD(style: .dark)
-    
+
     func showLoader(_ show: Bool) {
         view.endEditing(true)
-        
+
         show ? UIViewController.hud.show(in: view) :             UIViewController.hud.dismiss()
     }
 }

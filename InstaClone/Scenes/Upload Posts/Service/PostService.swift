@@ -11,11 +11,11 @@ import FirebaseFirestore
 
 struct PostService: PostServiceProtocol {
     func upload(post: Post, user: User, completion: @escaping (FirestoreCompletion)) {
-        
+
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        
+
         ImageUploader.uploadImage(image: post.image) { imageUrl in
-            
+
             let data = ["caption": post.caption,
                         "timestamp": Timestamp(date: Date()),
                         "likes": 0,
@@ -24,9 +24,9 @@ struct PostService: PostServiceProtocol {
                         "ownerImageUrl": user.profileImageUrl,
                         "ownerUserName": user.username
             ]
-            
+
             COLLECTION_POSTS.addDocument(data: data, completion: completion)
-            
+
         }
     }
 }

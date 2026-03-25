@@ -9,11 +9,11 @@ import UIKit
 
 class FeedCoordinator: Coordinator {
     var navigation: UINavigationController
-    
+
     init(navigation: UINavigationController) {
         self.navigation = navigation
     }
-    
+
     func start() {
         let controller = FeedViewController()
     }

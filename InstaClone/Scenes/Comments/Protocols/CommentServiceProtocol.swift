@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CommentServiceProtocol {
-    func uploadComment(comment: String, postId: String, user: User, completion: @escaping(FirestoreCompletion))
-    
-    func getComments(post postID: String, completion: @escaping([Comment]) -> Void)
+    func uploadComment(comment: String, postId: String, user: User, completion: @escaping (FirestoreCompletion))
+
+    func getComments(post postID: String, completion: @escaping ([Comment]) -> Void)
 }

@@ -12,7 +12,7 @@ enum NotificationType: Int {
     case like
     case follow
     case comment
-    
+
     var message: String {
         switch self {
         case .like: return " liked your post."

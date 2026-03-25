@@ -9,13 +9,13 @@ import UIKit
 
 class FeedCollectionViewCell: UICollectionViewCell {
     static let identifier = "FeedCollectionViewCell"
-    
+
     weak var delegate: FeedCellDelegate?
-    
+
     var viewModel: FeedCollectionCellViewModel? {
         didSet { configure() }
     }
-    
+
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -23,7 +23,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .lightGray
         return imageView
     }()
-    
+
     private lazy var userNameButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(.black, for: .normal)
@@ -31,14 +31,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         return button
     }()
-    
+
     private lazy var postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
+
     private lazy var bottomStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton, shareButton])
         stackView.axis = .horizontal
@@ -46,7 +46,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
+
     private lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(.likeUnselected, for: .normal)
@@ -56,7 +56,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         return button
     }()
-    
+
     private lazy var commentButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(.comment, for: .normal)
@@ -66,7 +66,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.addTarget(self, action: #selector(didTapComments), for: .touchUpInside)
         return button
     }()
-    
+
     private lazy var shareButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(.send2, for: .normal)
@@ -75,7 +75,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
         return button
     }()
-    
+
     private lazy var likesLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -83,7 +83,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private lazy var captionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -92,7 +92,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 0
         return label
     }()
-    
+
     private lazy var ribbonButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(.ribbon, for: .normal)
@@ -103,17 +103,16 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.tintColor = .black
         return button
     }()
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func configureUI() {
         self.contentView.addSubview(profileImageView)
         self.contentView.addSubview(userNameButton)
@@ -125,51 +124,51 @@ class FeedCollectionViewCell: UICollectionViewCell {
         self.bottomStackView.addSubview(likesLabel)
         self.contentView.addSubview(ribbonButton)
         self.contentView.addSubview(captionLabel)
-        
+
         profileImageView.layer.cornerRadius = 40 / 2
         profileImageView.layer.masksToBounds = true
-        
+
         configureConstraints()
     }
-    
+
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-            
+
             profileImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             profileImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             profileImageView.heightAnchor.constraint(equalToConstant: 40),
             profileImageView.widthAnchor.constraint(equalToConstant: 40),
-            
+
             userNameButton.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 5),
             userNameButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             userNameButton.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor),
-            
+
             postImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             postImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             postImageView.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10),
             postImageView.heightAnchor.constraint(equalToConstant: contentView.frame.width),
-            
-            bottomStackView.topAnchor.constraint(equalTo: postImageView.bottomAnchor,constant: 10),
-            
+
+            bottomStackView.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 10),
+
             bottomStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            
-            ribbonButton.topAnchor.constraint(equalTo: postImageView.bottomAnchor,constant: 5),
+
+            ribbonButton.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 5),
             ribbonButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-            
+
             likesLabel.topAnchor.constraint(equalTo: bottomStackView.bottomAnchor, constant: 10),
             likesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             likesLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
-            
+
             captionLabel.topAnchor.constraint(equalTo: likesLabel.bottomAnchor, constant: 5),
             captionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             captionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10)
 
         ])
     }
-    
+
     private func configure() {
         guard let viewModel = viewModel else { return }
-        
+
         profileImageView.sd_setImage(with: viewModel.ownerImageUrl)
         userNameButton.setTitle(viewModel.ownerUserName, for: .normal)
 
@@ -177,42 +176,42 @@ class FeedCollectionViewCell: UICollectionViewCell {
         self.captionLabel.text = viewModel.caption
         self.likesLabel.text = viewModel.likes
         addGestureToProfileImageView()
-       
+
         if let didLike = viewModel.didLike {
                 setupLikeButton(like: didLike)
             } else {
                 setupLikeButton(like: false)
             }
     }
-    
+
     private func addGestureToProfileImageView() {
         profileImageView.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer()
         gesture.addTarget(self, action: #selector(didTapUserProfileImage))
         profileImageView.addGestureRecognizer(gesture)
     }
-    
+
     @objc private func didTapComments() {
         guard let post = viewModel?.post else { return }
         delegate?.cell(self, wantsToShowCommentsFor: post)
     }
-    
+
     @objc private func didTapLike() {
         guard let post = viewModel?.post else { return }
         delegate?.cell(self, didLike: post)
     }
-    
+
     @objc private func didTapUserProfileImage() {
         guard let uid = viewModel?.post.ownerUid else { return }
         self.delegate?.cell(self, wantsToShowProfileFor: uid)
     }
-    
+
     func setupLikeButton(like: Bool) {
         if like {
             likeButton.setImage(.likeSelected, for: .normal)
             likeButton.tintColor = .red
         } else {
-            
+
             likeButton.setImage(.likeUnselected, for: .normal)
             likeButton.tintColor = .black
         }

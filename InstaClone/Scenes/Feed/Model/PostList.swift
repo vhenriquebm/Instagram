@@ -18,8 +18,8 @@ struct PostList {
     let ownerImageUrl: String
     let ownerUserName: String
     var didLike: Bool? = false
-    
-    init(postId: String, dictionary: [String : Any]) {
+
+    init(postId: String, dictionary: [String: Any]) {
         self.postId = postId
         self.caption = dictionary["caption"] as? String ?? ""
         self.likes = dictionary["likes"] as? Int ?? 0

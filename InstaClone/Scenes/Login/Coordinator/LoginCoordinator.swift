@@ -11,12 +11,12 @@ class LoginCoordinator: Coordinator {
     var navigation: UINavigationController
     var window: UIWindow?
     var currentController: UIViewController?
-    
+
     init(navigation: UINavigationController, window: UIWindow? = nil) {
         self.navigation = navigation
         self.window = window
     }
-    
+
     func start() {
         let controller = LoginViewController()
         let viewModel = LoginViewModel(coordinator: self)

@@ -12,15 +12,15 @@ struct RegistrationViewModel: RegistrationViewModelProtocol {
     var password: String?
     var fullName: String?
     var userName: String?
-    
+
     var isValid: Bool {
         return email?.isEmpty == false && password?.isEmpty == false && fullName?.isEmpty == false && userName?.isEmpty == false
     }
-    
+
     func register(with user: UserRegistration, completion: @escaping registrationCompletion) {
-        
+
         RegistrationService.register(with: user, completion: completion)
-        
+
 //        
 //        RegistrationService.register(with: user) { error in
 //            if let error = error {

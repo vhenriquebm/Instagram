@@ -2,7 +2,6 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-
 typealias loginCompletion = (AuthDataResult?, Error?) -> Void
 
 struct LoginService {

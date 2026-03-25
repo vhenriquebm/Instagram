@@ -16,12 +16,12 @@ class NotificationsCoordinator: Coordinator {
     var navigation: UINavigationController
     var window: UIWindow?
     var currentController: UIViewController?
-    
+
     init(navigation: UINavigationController, window: UIWindow? = nil) {
         self.navigation = navigation
         self.window = window
     }
-    
+
     func start() {
         let controller = LoginViewController()
         // let viewModel = LoginViewModel(coordinator: self)
@@ -34,22 +34,21 @@ class NotificationsCoordinator: Coordinator {
     }
 }
 
-
 // MARK: - Navigate to Post
 
 extension NotificationsCoordinator: NotificationsCoordinatorProtocol {
     func navigateTo(post: PostList) {
         let layout = UICollectionViewFlowLayout()
         let controller = FeedViewController(collectionViewLayout: layout)
-        
+
         let viewModel = FeedViewModel(service: FeedService(),
                                       userService: UserService(),
                                       notificationService: NotificationService(),
                                       post: nil)
         viewModel.post = post
-        
+
         controller.viewModel = viewModel
-        
+
         self.navigation.pushViewController(controller, animated: false)
     }
 }
@@ -58,13 +57,13 @@ extension NotificationsCoordinator: NotificationsCoordinatorProtocol {
 
 extension NotificationsCoordinator {
     func navigateToProfile(with user: User) {
-        
+
         let controller = ProfileViewController()
-        
+
         let viewModel = ProfileViewModel(user: user)
-        
+
         controller.viewModel = viewModel
-        
+
         self.navigation.pushViewController(controller, animated: false)
     }
 }

@@ -11,7 +11,7 @@ protocol LoginViewModelProtocol: AnyObject {
     var email: String? { get set }
     var password: String? { get set }
     var isValid: Bool { get }
-    
+
     func login(with email: String, and password: String, completion: @escaping loginCompletion)
     func goToFeed()
 }

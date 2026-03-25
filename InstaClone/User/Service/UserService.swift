@@ -9,10 +9,10 @@ import Foundation
 import FirebaseAuth
 
 class UserService: UserServiceProtocol {
-    
+
     func getUser(with uid: String, completion: @escaping profileCompletion) {
-        COLLECTION_USERS.document(uid).getDocument { snapshot, error in
-            
+        COLLECTION_USERS.document(uid).getDocument { snapshot, _ in
+
             guard let dictionary = snapshot?.data() else { return }
             let user = User(dictionary: dictionary)
             completion(user)

@@ -10,12 +10,12 @@ import UIKit
 class ProfileCoordinator: Coordinator {
     var navigation: UINavigationController
     private var user: User?
-    
+
     init(navigation: UINavigationController, user: User?) {
         self.navigation = navigation
         self.user = user
     }
-    
+
     func start() {
         let layout = UICollectionViewFlowLayout()
         let controller = ProfileViewController(collectionViewLayout: layout)
@@ -24,5 +24,3 @@ class ProfileCoordinator: Coordinator {
         navigation.pushViewController(controller, animated: false)
     }
 }
-
-

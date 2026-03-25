@@ -8,10 +8,10 @@
 import Foundation
 
 protocol CommentViewModelProtocol {
-    func uploadComment(comment: String, completion: @escaping () -> ())
-    func getComments(completion: @escaping () -> ())
+    func uploadComment(comment: String, completion: @escaping () -> Void)
+    func getComments(completion: @escaping () -> Void)
     func getUser(with uid: String)
     func uploadNotification(from user: User, type: NotificationType)
-    
+
     var comments: [Comment] { get set }
 }

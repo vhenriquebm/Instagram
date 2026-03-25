@@ -14,7 +14,7 @@ class RegistrationView: UIView {
         configureGradientBackground()
         configureView()
     }
-    
+
     private func configureView() {
         addSubview(addPhotoButton)
         addSubview(fieldsStackView)
@@ -22,7 +22,7 @@ class RegistrationView: UIView {
         addSubview(loadingView)
         configureConstraints()
     }
-    
+
     lazy var addPhotoButton: UIButton = {
         let button = UIButton()
         button.setImage(.plusPhoto.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -30,7 +30,7 @@ class RegistrationView: UIView {
         button.tintColor = UIColor.white
         return button
     }()
-    
+
      lazy var fieldsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField, fullNameTextField, userNameTextField, registerButton])
         stackView.spacing = 10
@@ -38,12 +38,12 @@ class RegistrationView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
+
      let emailTextField = CustomTextField(placeholder: "Email")
      let passwordTextField = CustomTextField(placeholder: "Password", isSecureEntry: true)
      let fullNameTextField = CustomTextField(placeholder: "Fullname")
      let userNameTextField = CustomTextField(placeholder: "Username")
-    
+
      lazy var registerButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sign Up", for: .normal)
@@ -55,14 +55,14 @@ class RegistrationView: UIView {
         button.isEnabled = false
         return button
     }()
-    
+
      lazy var alreadyHaveAnAccountButton: UIButton = {
         let button = UIButton()
         button.attributedTitle(firstText: "Already have an account?", secondText: "Log in")
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+
     lazy var loadingView: UIActivityIndicatorView = {
        let view = UIActivityIndicatorView()
         view.hidesWhenStopped = true
@@ -71,28 +71,27 @@ class RegistrationView: UIView {
         view.color = UIColor.white
         return view
     }()
-    
-    
+
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-            
+
             addPhotoButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             addPhotoButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             addPhotoButton.heightAnchor.constraint(equalToConstant: 150),
             addPhotoButton.widthAnchor.constraint(equalToConstant: 150),
-            
+
             fieldsStackView.topAnchor.constraint(equalTo: addPhotoButton.bottomAnchor, constant: 20),
-            
+
             fieldsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            
+
             fieldsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            
+
             registerButton.heightAnchor.constraint(equalToConstant: 50),
-            
+
             alreadyHaveAnAccountButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 20),
             alreadyHaveAnAccountButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             alreadyHaveAnAccountButton.heightAnchor.constraint(equalToConstant: 50),
-            
+
             loadingView.centerYAnchor.constraint(equalTo: centerYAnchor),
             loadingView.centerXAnchor.constraint(equalTo: centerXAnchor),
             loadingView.heightAnchor.constraint(equalToConstant: 50),

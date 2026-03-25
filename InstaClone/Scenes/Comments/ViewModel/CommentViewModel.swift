@@ -15,7 +15,7 @@ class CommentViewModel: CommentViewModelProtocol {
     private var post: PostList
     private var user: User
     var comments = [Comment]()
-    
+
     init(service: CommentServiceProtocol, userService: UserServiceProtocol, notificationService: NotificationService, coordinator: CommentCoordinatorProtocol, post: PostList, user: User) {
         self.service = service
         self.userService = userService
@@ -24,28 +24,28 @@ class CommentViewModel: CommentViewModelProtocol {
         self.post = post
         self.user = user
     }
-    
-    func uploadComment(comment: String, completion: @escaping () -> ()) {
+
+    func uploadComment(comment: String, completion: @escaping () -> Void) {
         self.service.uploadComment(comment: comment, postId: post.postId, user: user, completion: {_ in
             completion()
         })
     }
-    
-    func getComments(completion: @escaping () -> ()) {
+
+    func getComments(completion: @escaping () -> Void) {
         self.service.getComments(post: post.postId) { comments in
             self.comments = comments
             completion()
         }
     }
-    
+
     func getUser(with uid: String) {
         self.userService.getUser(with: uid) { user in
             self.coordinator.goToProfile(with: user)
         }
     }
-    
+
     func uploadNotification(from user: User, type: NotificationType) {
-        
+
         notificationService.uploadNotification(to: post.ownerUid,
                                                from: user,
                                                type: type,

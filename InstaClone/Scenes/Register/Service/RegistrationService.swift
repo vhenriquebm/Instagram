@@ -8,33 +8,33 @@
 import Foundation
 import Firebase
 
-typealias registrationCompletion = (Error?) -> ()
+typealias registrationCompletion = (Error?) -> Void
 
 class RegistrationService {
-    
+
     static func register(with user: UserRegistration, completion: @escaping registrationCompletion ) {
-        
+
         ImageUploader.uploadImage(image: user.profileImage!) { imageUrl in
-            
-            Auth.auth().createUser(withEmail:  user.email, password: user.password) { result, error in
-                
+
+            Auth.auth().createUser(withEmail: user.email, password: user.password) { result, error in
+
                 if let error = error {
-                    print ("DEBUG: Failed to register user \(error.localizedDescription)")
+                    print("DEBUG: Failed to register user \(error.localizedDescription)")
                     return
                 } else {
-                    print ("DEBUG: Success to register user")
+                    print("DEBUG: Success to register user")
 
                 }
-                
+
                 guard let uid = result?.user.uid else { return }
-                
+
                 let data: [String: Any] = ["email": user.email,
                                            "fullname": user.fullName,
                                            "profileImageUrl": imageUrl,
                                            "uid": uid,
                                            "username": user.userName.lowercased() ]
-                
-                print ("DEBUG: Data to firesote \(data)")
+
+                print("DEBUG: Data to firesote \(data)")
 
                 COLLECTION_USERS.document(uid).setData(data, completion: completion)
             }

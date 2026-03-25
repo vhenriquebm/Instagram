@@ -11,43 +11,43 @@ class FeedViewModel: FeedViewModelProtocol {
     private var service: FeedServiceProtocol
     private var userService: UserServiceProtocol
     private var notificationService: NotificationServiceProtocol
-    
+
     var postList = [PostList]()
     var post: PostList?
-    
+
     init(service: FeedServiceProtocol, userService: UserServiceProtocol, notificationService: NotificationServiceProtocol, post: PostList? = nil ) {
         self.service = service
         self.userService = userService
         self.notificationService = notificationService
         self.post = post
     }
-    
-    func getPosts(completion: @escaping () -> ()) {
+
+    func getPosts(completion: @escaping () -> Void) {
         guard post == nil else { return }
-        
+
         self.service.getPosts { posts in
             self.postList = posts
-            
+
             self.checkIfUserLikedPost(completion: completion)
         }
     }
-    
-    private func checkIfUserLikedPost(completion: @escaping () -> ()) {
+
+    private func checkIfUserLikedPost(completion: @escaping () -> Void) {
         self.postList.forEach { post in
-            
+
             service.checkIfUserLikedPost(post: post) { didLike in
                 if let index = self.postList.firstIndex(where: { $0.postId == post.postId }) {
                     self.postList[index].didLike = didLike
                 }
-                
+
                 completion()
             }
         }
     }
-    
-    func didTapLike(post: PostList, completion: @escaping (Bool) -> ()) {
+
+    func didTapLike(post: PostList, completion: @escaping (Bool) -> Void) {
         guard let didLike = post.didLike else { return }
-        
+
         if didLike {
             self.service.unLike(post: post) { error in
                 guard error == nil else { return }
@@ -60,18 +60,16 @@ class FeedViewModel: FeedViewModelProtocol {
             }
         }
     }
-    
-    func getUser(with uid: String,  completion: @escaping profileCompletion) {
+
+    func getUser(with uid: String, completion: @escaping profileCompletion) {
         self.userService.getUser(with: uid, completion: completion)
     }
-    
+
     func uploadNotification(type: NotificationType, post: PostList, user: User) {
-        
+
         self.notificationService.uploadNotification(to: post.ownerUid,
                                                     from: user,
                                                     type: .like,
                                                     post: post)
     }
 }
-
-

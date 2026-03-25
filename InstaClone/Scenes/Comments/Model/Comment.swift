@@ -13,7 +13,7 @@ struct Comment {
     let profileImageUrl: String
     let timestamp: Timestamp
     let comment: String
-    
+
     init(dictionary: [String: Any]) {
         self.uid = dictionary["uid"] as? String ?? ""
         self.username = dictionary["username"] as? String ?? ""

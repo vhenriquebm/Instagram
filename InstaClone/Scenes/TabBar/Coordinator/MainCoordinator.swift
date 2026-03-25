@@ -10,12 +10,12 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigation: UINavigationController
     var window: UIWindow?
-    
+
     init(navigation: UINavigationController, window: UIWindow?) {
         self.navigation = navigation
         self.window = window
     }
-    
+
     func start() {
         let controller = MainTabBarController()
         window?.rootViewController = controller

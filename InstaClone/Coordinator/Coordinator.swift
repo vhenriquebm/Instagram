@@ -9,6 +9,6 @@ import UIKit
 
 protocol Coordinator {
     var navigation: UINavigationController { get set }
-    
+
     func start()
 }

@@ -14,14 +14,14 @@ struct User {
     let username: String
     let profileImageUrl: String
     let fullname: String
-    
+
     var userStats: UserStats
-    
+
     var isFollewed: Bool = false
-    
+
     var isCurrentUser: Bool {return Auth.auth().currentUser?.uid == uid}
-    
-    init(dictionary: [String : Any]) {
+
+    init(dictionary: [String: Any]) {
         self.email = dictionary["email"] as? String ?? ""
         self.uid = dictionary["uid"] as? String ?? ""
         self.username = dictionary["username"] as? String ?? ""
