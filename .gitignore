@@ -1,0 +1,54 @@
+# Xcode
+
+build/
+DerivedData/
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods
+
+Pods/
+Podfile.lock
+
+# Carthage
+
+Carthage/Build/
+
+# Fastlane
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# macOS
+
+.DS_Store
+
+# Logs
+
+*.log
+
+# Archives
+
+*.xcarchive
+
+# Temporary files
+
+*.swp
+*.tmp
+
+# User settings
+
+*.mode1v3
+*.mode2v3
+*.perspectivev3
