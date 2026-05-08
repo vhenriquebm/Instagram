@@ -25,7 +25,7 @@ class FeedViewController: UICollectionViewController {
 
         configureNavigationBar()
 
-        navigationItem.title = "Feed"
+        navigationItem.title = Feed.title
 
         refreshController.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.refreshControl = refreshController
@@ -43,14 +43,14 @@ class FeedViewController: UICollectionViewController {
     private func configureNavigationBar() {
 
         if (viewModel?.post) != nil {
-            let navigationButton = UIBarButtonItem(title: "Back",
+            let navigationButton = UIBarButtonItem(title: Button.back,
                                                    style: .plain,
                                                    target: self,
                                                    action: #selector(back))
             navigationItem.leftBarButtonItem = navigationButton
 
         } else {
-            let navigationButton = UIBarButtonItem(title: "Logout",
+            let navigationButton = UIBarButtonItem(title: Button.logout,
                                                    style: .plain,
                                                    target: self,
                                                    action: #selector(signOut))

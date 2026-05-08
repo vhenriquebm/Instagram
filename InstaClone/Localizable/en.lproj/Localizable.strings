@@ -7,6 +7,15 @@
 */
 
 
+//MARK: - Button
+
+"button.back" = "Back";
+"button.logout" = "Logout";
+
+//MARK: - Feed
+
+"feed.title" = "Feed";
+
 //MARK: - Upload Posts
 
 "upload.post.title" = "Upload Posts";
