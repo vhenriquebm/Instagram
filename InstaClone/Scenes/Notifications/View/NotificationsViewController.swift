@@ -19,7 +19,7 @@ class NotificationViewController: UITableViewController {
 
     private func configureView() {
         view.backgroundColor = .white
-        self.title = "Notifications"
+        navigationItem.title = "Notifications"
 
     }
 

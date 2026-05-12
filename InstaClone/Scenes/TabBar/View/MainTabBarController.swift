@@ -39,9 +39,9 @@ class MainTabBarController: UITabBarController {
         let feed = createController(unselectedImage: .homeUnselected,
                                     selectedImage: .homeSelected,
                                     rootViewController: feedContoller)
-
-        let search = createController(unselectedImage: .searchSelected,
-                                      selectedImage: .searchUnselected,
+            
+        let search = createController(unselectedImage: .searchUnselected,
+                                      selectedImage: .searchSelected,
                                       rootViewController: createSearchController())
 
         let imageSelector = createController(unselectedImage: .plusUnselected,
@@ -77,29 +77,27 @@ class MainTabBarController: UITabBarController {
 
     private func createController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
         let navigation = UINavigationController(rootViewController: rootViewController)
-
-        let tabBarItemSize = CGSize(width: 25, height: 25)
-        let resizedUnselectedImage = unselectedImage.resized(to: tabBarItemSize)
-        let resizedSelectedImage = selectedImage.resized(to: tabBarItemSize)
-
-        navigation.tabBarItem.image = resizedUnselectedImage
-        navigation.tabBarItem.selectedImage = resizedSelectedImage
-        navigation.navigationBar.tintColor = .black
-
+        configureTabBarItem(for: navigation, unselectedImage: unselectedImage, selectedImage: selectedImage)
         return navigation
     }
 
     private func createNotificationsController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController, navigation: UINavigationController) -> UINavigationController {
-
-        let tabBarItemSize = CGSize(width: 25, height: 25)
-        let resizedUnselectedImage = unselectedImage.resized(to: tabBarItemSize)
-        let resizedSelectedImage = selectedImage.resized(to: tabBarItemSize)
-
-        navigation.tabBarItem.image = resizedUnselectedImage
-        navigation.tabBarItem.selectedImage = resizedSelectedImage
-        navigation.navigationBar.tintColor = .black
-
+        configureTabBarItem(for: navigation, unselectedImage: unselectedImage, selectedImage: selectedImage)
         return navigation
+    }
+
+    private func configureTabBarItem(for navigation: UINavigationController, unselectedImage: UIImage, selectedImage: UIImage) {
+        let tabBarItemSize = CGSize(width: 25, height: 25)
+
+        navigation.tabBarItem.image = unselectedImage
+            .resized(to: tabBarItemSize)?
+            .withRenderingMode(.alwaysOriginal)
+        navigation.tabBarItem.selectedImage = selectedImage
+            .resized(to: tabBarItemSize)?
+            .withRenderingMode(.alwaysOriginal)
+        navigation.tabBarItem.title = nil
+        navigation.tabBarItem.imageInsets = .zero
+        navigation.navigationBar.tintColor = .black
     }
 
     private func didFinishPickingMedia(_ picker: YPImagePicker) {
